@@ -35,7 +35,7 @@
     <string name="please_wait">Please Wait&#8230;</string>
 
     <string name="title_forgot_password">FORGOT PASSWORD?</string>
-    <string name="forgot_password_title_description">Enter your username and e-mail address we\'ll send you a email to reset your password</string>
+    <string name="forgot_password_title_description">Enter your e-mail address we\'ll send you an email to reset your password</string>
     <string name="btn_lbl_submit">Submit</string>
     <string name="email_sent_success">Email sent successfully to reset your password</string>
 
