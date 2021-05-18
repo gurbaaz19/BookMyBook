@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping Application</string>
+    <string name="app_name">Book My Book</string>
 
     <string name="content_description">image</string>
     <string name="title_login">LOGIN</string>
