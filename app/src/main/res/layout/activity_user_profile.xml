@@ -178,7 +178,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
 
-                <com.shoppingapplication.utilities.RadioButtonMontserratBold
+                <com.projectfire.bookmybook.utilities.RadioButtonMontserratBold
                     android:id="@+id/rb_male"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -192,7 +192,7 @@
                     android:textColor="@drawable/drawable_gender_tab_text_color_selector"
                     android:textStyle="bold" />
 
-                <com.shoppingapplication.utilities.RadioButtonMontserratBold
+                <com.projectfire.bookmybook.utilities.RadioButtonMontserratBold
                     android:id="@+id/rb_female"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
