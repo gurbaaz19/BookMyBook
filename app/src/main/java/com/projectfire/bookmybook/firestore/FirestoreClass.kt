@@ -81,9 +81,9 @@ class FirestoreClass {
                     is LoginActivity -> {
                         activity.userLoggedInSuccess(user)
                     }
-                    is SettingsActivity -> {
-                        activity.userDetailsSuccess(user)
-                    }
+//                    is SettingsActivity -> {
+//                        activity.userDetailsSuccess(user)
+//                    }
                 }
             }
             .addOnFailureListener { e ->

@@ -219,6 +219,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+            actionBar.title = ""
         }
 
         toolbar_user_profile_activity.setNavigationOnClickListener { onBackPressed() }
