@@ -22,9 +22,9 @@
     <dimen name="button_paddingTop_Bottom">8dp</dimen>
 
     <dimen name="progress_dialog_content_padding">10dp</dimen>
-    <dimen name="progress_bar_size">50dp</dimen>
-    <dimen name="progress_text_marginStart">16dp</dimen>
-    <dimen name="progress_text_size">16sp</dimen>
+    <dimen name="progress_bar_size">100dp</dimen>
+    <dimen name="progress_text_marginStart">100dp</dimen>
+    <dimen name="progress_text_size">24sp</dimen>
 
     <dimen name="forgot_password_title_textSize">18sp</dimen>
     <dimen name="forgot_password_title_description_textSize">14sp</dimen>
