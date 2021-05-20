@@ -5,9 +5,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
@@ -167,24 +169,26 @@ class FirestoreClass {
     }
 
     fun firebaseAuthWithGoogle(activity: Activity, idToken: String) {
+        when (activity) {
+            is LoginActivity -> {
         var auth = Firebase.auth
         var isRegistered = false
 
         mFirestore.collection(Constants.USERS)
-            .whereEqualTo(Constants.ID, getCurrentUserID())
+            .document(getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
-                if (document.documents.size > 0) {
-                    isRegistered = true
-                }
+                isRegistered = document.exists()
             }
-        when (activity) {
-            is LoginActivity -> {
-                if (!isRegistered) {
-                    val credential = GoogleAuthProvider.getCredential(idToken, null)
-                    auth.signInWithCredential(credential)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
+            .addOnFailureListener {
+                isRegistered = false
+            }
+
+                val credential = GoogleAuthProvider.getCredential(idToken, null)
+                auth.signInWithCredential(credential)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            if (!isRegistered) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("A", "signInWithCredential:success")
                                 var name = auth.currentUser!!.displayName!!.split(" ")
@@ -210,27 +214,28 @@ class FirestoreClass {
                                             "Error while registering the user.",
                                             e
                                         )
-//                activity.showErrorSnackBar( "Error while registering the user.", true)
                                     }
-
                             } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w("A", "signInWithCredential:failure", task.exception)
-                                activity.showSnackBar("Authentication Failed", true)
-                                //updateUI(null)
-                            }
-                        }
-                } else {
+                                var user: Task<DocumentSnapshot> =
+                                    mFirestore.collection(
+                                        Constants.USERS
+                                    ).document(getCurrentUserID()).get()
+                                user.addOnSuccessListener { document ->
+                                    val userInfo =
+                                        document.toObject(User::class.java)!!
+                                    activity.userLoggedInSuccess(userInfo)
+                                }
 
-                    var name = auth.currentUser!!.displayName!!.split(" ")
-                    val userInfo = User(
-                        auth.currentUser!!.uid,
-                        name[0],
-                        name[name.size - 1],
-                        auth.currentUser!!.email!!
-                    )
-                    activity.userLoggedInSuccess(userInfo)
-                }
+                            }
+
+                        } else{
+                            // If sign in fails, display a message to the user.
+                            Log.w("A", "signInWithCredential:failure", task.exception)
+                            activity.showSnackBar("Authentication Failed", true)
+                            //updateUI(null)
+//                activity.showErrorSnackBar( "Error while registering the user.", true)
+                        }
+                    }
             }
         }
     }
