@@ -19,7 +19,6 @@ import com.projectfire.bookmybook.ui.activities.RegisterActivity
 import com.projectfire.bookmybook.ui.activities.SettingsActivity
 import com.projectfire.bookmybook.ui.activities.UserProfileActivity
 import com.projectfire.bookmybook.utilities.Constants
-import kotlinx.android.synthetic.main.activity_register.*
 
 class FirestoreClass {
 
@@ -168,48 +167,70 @@ class FirestoreClass {
     }
 
     fun firebaseAuthWithGoogle(activity: Activity, idToken: String) {
+        var auth = Firebase.auth
+        var isRegistered = false
+
+        mFirestore.collection(Constants.USERS)
+            .whereEqualTo(Constants.ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.documents.size > 0) {
+                    isRegistered = true
+                }
+            }
         when (activity) {
             is LoginActivity -> {
-                var auth = Firebase.auth
-                val credential = GoogleAuthProvider.getCredential(idToken, null)
-                auth.signInWithCredential(credential)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("A", "signInWithCredential:success")
-                            var name = auth.currentUser!!.displayName!!.split(" ")
-                            val userInfo = User(
-                                auth.currentUser!!.uid,
-                                name[0],
-                                name[name.size-1],
-                                auth.currentUser!!.email!!
-                            )
+                if (!isRegistered) {
+                    val credential = GoogleAuthProvider.getCredential(idToken, null)
+                    auth.signInWithCredential(credential)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("A", "signInWithCredential:success")
+                                var name = auth.currentUser!!.displayName!!.split(" ")
+                                val userInfo = User(
+                                    auth.currentUser!!.uid,
+                                    name[0],
+                                    name[name.size - 1],
+                                    auth.currentUser!!.email!!
+                                )
 
-                            mFirestore.collection(Constants.USERS)
-                                //Getting document id, here it is same as id
-                                .document(userInfo.id)
-                                //If we want to merge the data instead of replacing the complete thing
-                                .set(userInfo, SetOptions.merge())
-                                .addOnSuccessListener {
-                                    activity.userLoggedInSuccess(userInfo)
-                                }
-                                .addOnFailureListener { e ->
-                                    activity.hideProgressDialog()
-                                    Log.e(
-                                        activity.javaClass.simpleName,
-                                        "Error while registering the user.",
-                                        e
-                                    )
+                                mFirestore.collection(Constants.USERS)
+                                    //Getting document id, here it is same as id
+                                    .document(userInfo.id)
+                                    //If we want to merge the data instead of replacing the complete thing
+                                    .set(userInfo, SetOptions.merge())
+                                    .addOnSuccessListener {
+                                        activity.userLoggedInSuccess(userInfo)
+                                    }
+                                    .addOnFailureListener { e ->
+                                        activity.hideProgressDialog()
+                                        Log.e(
+                                            activity.javaClass.simpleName,
+                                            "Error while registering the user.",
+                                            e
+                                        )
 //                activity.showErrorSnackBar( "Error while registering the user.", true)
-                                }
+                                    }
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("A", "signInWithCredential:failure", task.exception)
-                            activity.showSnackBar("Authentication Failed", true)
-                            //updateUI(null)
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("A", "signInWithCredential:failure", task.exception)
+                                activity.showSnackBar("Authentication Failed", true)
+                                //updateUI(null)
+                            }
                         }
-                    }
+                } else {
+
+                    var name = auth.currentUser!!.displayName!!.split(" ")
+                    val userInfo = User(
+                        auth.currentUser!!.uid,
+                        name[0],
+                        name[name.size - 1],
+                        auth.currentUser!!.email!!
+                    )
+                    activity.userLoggedInSuccess(userInfo)
+                }
             }
         }
     }

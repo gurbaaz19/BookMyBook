@@ -15,6 +15,7 @@ object Constants {
     const val READ_STORAGE_PERMISSION_CODE = 2
     const val PICK_IMAGE_REQUEST_CODE = 1
 
+    const val ID: String= "id"
     const val FIRST_NAME: String = "firstName"
     const val LAST_NAME: String = "lastName"
     const val MOBILE: String = "mobile"
