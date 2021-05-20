@@ -6,8 +6,11 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.projectfire.bookmybook.models.User
@@ -16,6 +19,7 @@ import com.projectfire.bookmybook.ui.activities.RegisterActivity
 import com.projectfire.bookmybook.ui.activities.SettingsActivity
 import com.projectfire.bookmybook.ui.activities.UserProfileActivity
 import com.projectfire.bookmybook.utilities.Constants
+import kotlinx.android.synthetic.main.activity_register.*
 
 class FirestoreClass {
 
@@ -161,5 +165,52 @@ class FirestoreClass {
                     activity.javaClass.simpleName, exception.message, exception
                 )
             }
+    }
+
+    fun firebaseAuthWithGoogle(activity: Activity, idToken: String) {
+        when (activity) {
+            is LoginActivity -> {
+                var auth = Firebase.auth
+                val credential = GoogleAuthProvider.getCredential(idToken, null)
+                auth.signInWithCredential(credential)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("A", "signInWithCredential:success")
+                            var name = auth.currentUser!!.displayName!!.split(" ")
+                            val userInfo = User(
+                                auth.currentUser!!.uid,
+                                name[0],
+                                name[name.size-1],
+                                auth.currentUser!!.email!!
+                            )
+
+                            mFirestore.collection(Constants.USERS)
+                                //Getting document id, here it is same as id
+                                .document(userInfo.id)
+                                //If we want to merge the data instead of replacing the complete thing
+                                .set(userInfo, SetOptions.merge())
+                                .addOnSuccessListener {
+                                    activity.userLoggedInSuccess(userInfo)
+                                }
+                                .addOnFailureListener { e ->
+                                    activity.hideProgressDialog()
+                                    Log.e(
+                                        activity.javaClass.simpleName,
+                                        "Error while registering the user.",
+                                        e
+                                    )
+//                activity.showErrorSnackBar( "Error while registering the user.", true)
+                                }
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("A", "signInWithCredential:failure", task.exception)
+                            activity.showSnackBar("Authentication Failed", true)
+                            //updateUI(null)
+                        }
+                    }
+            }
+        }
     }
 }

@@ -109,11 +109,31 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_textSize" />
 
+            <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+                android:id="@+id/tv_or"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="OR"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/lbl_text_view_textSize" />
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_sign_in_google"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -140,6 +160,16 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/lbl_text_view_textSize" />
     </LinearLayout>
+            <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+                android:id="@+id/tv_use_only_if_not_using_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:padding="@dimen/clickable_text_view_padding"
+                android:text="@string/use_only_if_not_using_google"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/lbl_text_view_textSize" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

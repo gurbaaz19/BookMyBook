@@ -99,13 +99,13 @@ class RegisterActivity : BaseActivity() {
                 )
                 false
             }
-            !cb_terms_and_condition.isChecked -> {
-                showSnackBar(
-                    resources.getString(R.string.err_msg_agree_terms_and_condition),
-                    true
-                )
-                false
-            }
+//            !cb_terms_and_condition.isChecked -> {
+//                showSnackBar(
+//                    resources.getString(R.string.err_msg_agree_terms_and_condition),
+//                    true
+//                )
+//                false
+//            }
             else -> {
                 true
             }

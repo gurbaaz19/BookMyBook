@@ -6,6 +6,8 @@ import android.provider.MediaStore
 import android.webkit.MimeTypeMap
 
 object Constants {
+    const val RC_GOOGLE_SIGN_IN = 4926
+
     const val USERS: String = "users"
     const val APP_PREFERENCES: String = "ShoppingAppPrefs"
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
