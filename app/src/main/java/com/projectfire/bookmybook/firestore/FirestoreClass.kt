@@ -172,22 +172,24 @@ class FirestoreClass {
         when (activity) {
             is LoginActivity -> {
         var auth = Firebase.auth
-        var isRegistered = false
-
-        mFirestore.collection(Constants.USERS)
-            .document(getCurrentUserID())
-            .get()
-            .addOnSuccessListener { document ->
-                isRegistered = document.exists()
-            }
-            .addOnFailureListener {
-                isRegistered = false
-            }
 
                 val credential = GoogleAuthProvider.getCredential(idToken, null)
                 auth.signInWithCredential(credential)
                     .addOnCompleteListener { task ->
+
+                        var isRegistered = false
+
+                        mFirestore.collection(Constants.USERS)
+                            .whereEqualTo(Constants.ID,auth.currentUser?.uid)
+                            .get()
+                            .addOnSuccessListener{ document->
+                                Log.e("A",document.documents.size.toString())
+                                if(document.documents.size > 0){
+                                    isRegistered = true
+                                }
+
                         if (task.isSuccessful) {
+                            Log.e("A",isRegistered.toString())
                             if (!isRegistered) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("A", "signInWithCredential:success")
@@ -215,7 +217,7 @@ class FirestoreClass {
                                             e
                                         )
                                     }
-                            } else {
+                            } else if(isRegistered) {
                                 var user: Task<DocumentSnapshot> =
                                     mFirestore.collection(
                                         Constants.USERS
@@ -234,7 +236,7 @@ class FirestoreClass {
                             activity.showSnackBar("Authentication Failed", true)
                             //updateUI(null)
 //                activity.showErrorSnackBar( "Error while registering the user.", true)
-                        }
+                        }}
                     }
             }
         }
