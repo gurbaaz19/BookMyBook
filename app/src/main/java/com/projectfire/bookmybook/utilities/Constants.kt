@@ -6,9 +6,14 @@ import android.provider.MediaStore
 import android.webkit.MimeTypeMap
 
 object Constants {
+
+    //Collections
+    const val USERS: String = "users"
+    const val PRODUCT: String = "product"
+    //
+
     const val RC_GOOGLE_SIGN_IN = 4926
 
-    const val USERS: String = "users"
     const val APP_PREFERENCES: String = "ShoppingAppPrefs"
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
     const val EXTRA_USER_DETAILS: String = "extra_user_details"
@@ -25,7 +30,22 @@ object Constants {
     const val IMAGE: String = "image"
     const val USER_PROFILE_IMAGE: String = "User_Profile_Image"
 
+    const val USER_ID: String = "user_id"
+
     const val COMPLETE_PROFILE = "profileCompleted"
+
+    const val PRODUCT_IMAGE: String = "Product_Image"
+
+    const val EXTRA_PRODUCT_ID: String = "extra_product_id"
+
+    const val EXTRA_PRODUCT_OWNER_ID: String = "extra_product_owner_id"
+
+    const val DEFAULT_CART_QUANTITY: String = "1"
+
+    const val CART_ITEMS: String = "cart_items"
+
+    const val PRODUCT_ID: String = "product_id"
+
 
 
     fun showImageChooser(activity: Activity) {
