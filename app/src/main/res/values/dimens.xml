@@ -69,6 +69,7 @@
 
     <dimen name="item_list_marginTop">16dp</dimen>
     <dimen name="item_list_padding">10dp</dimen>
+    <dimen name="item_list_margin">10dp</dimen>
     <dimen name="item_image_padding">2dp</dimen>
     <dimen name="item_image_width">80dp</dimen>
     <dimen name="item_image_height">70dp</dimen>
@@ -79,13 +80,14 @@
 
     <dimen name="item_dashboard_margin">5dp</dimen>
     <dimen name="item_dashboard_padding">1dp</dimen>
-    <dimen name="item_dashboard_image_height">150dp</dimen>
+    <dimen name="item_dashboard_image_height">200dp</dimen>
     <dimen name="item_dashboard_image_margin">10dp</dimen>
     <dimen name="divider_height">1dp</dimen>
     <dimen name="dashboard_item_paddingStartEnd">10dp</dimen>
     <dimen name="dashboard_item_paddingTopBottom">5dp</dimen>
     <dimen name="dashboard_item_textSize">12sp</dimen>
     <dimen name="dashboard_item_price_marginTop">2dp</dimen>
+    <dimen name="dashboard_item_border_radius">10dp</dimen>
 
     <dimen name="delete_icon_padding">5dp</dimen>
 

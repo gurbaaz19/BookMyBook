@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#22adfc</color>
-    <color name="colorPrimaryDark">#2962FF</color>
+<!--    <color name="colorPrimaryDark">#2962FF</color>-->
+    <color name="colorPrimaryDark">#2573FA</color>
     <color name="colorSecondary">#f2bf2c</color>
     <color name="colorSecondaryDark">#f2a62c</color>
     <color name="colorPrimaryText">#222934</color>
@@ -30,4 +31,6 @@
     <color name="item_value_text_color">#545353</color>
 
     <color name="dashboard_item_details_bg">#F3F3F3</color>
+
+    <color name="transparent">#00FFFFFF</color>
 </resources>

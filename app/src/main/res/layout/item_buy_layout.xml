@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/view_divider"
-        android:background="@color/dashboard_item_details_bg"
+        android:background="@drawable/item_dashboard_item_background"
         android:orientation="vertical"
         android:paddingStart="@dimen/dashboard_item_paddingStartEnd"
         android:paddingTop="@dimen/dashboard_item_paddingTopBottom"
