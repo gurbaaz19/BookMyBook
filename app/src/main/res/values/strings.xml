@@ -82,6 +82,10 @@
     <string name="et_hint_product_isbn">ISBN (OPTIONAL)</string>
     <string name="et_hint_product_description">Description</string>
     <string name="et_hint_product_quantity">Quantity</string>
+    <string name="tv_product_condition">Condition of Book/Product</string>
+    <string name="rb_good">Good</string>
+    <string name="rb_bad">Bad</string>
+    <string name="rb_average">Average</string>
 
     <string name="err_msg_select_product_image">Please select an image.</string>
     <string name="err_msg_enter_product_title">Please enter the book title.</string>

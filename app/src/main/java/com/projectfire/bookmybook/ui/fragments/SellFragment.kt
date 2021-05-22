@@ -1,13 +1,19 @@
 package com.projectfire.bookmybook.ui.fragments
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.firestore.FirestoreClass
 import com.projectfire.bookmybook.models.Product
+import com.projectfire.bookmybook.ui.activities.AddProductActivity
+import com.projectfire.bookmybook.ui.activities.DashboardActivity
+import com.projectfire.bookmybook.ui.activities.LoginActivity
 //import com.projectfire.bookmybook.ui.activities.AddProductActivity
 import com.projectfire.bookmybook.ui.adapters.SellListAdapter
 import kotlinx.android.synthetic.main.fragment_sell.*
@@ -44,7 +50,7 @@ class SellFragment : BaseFragment() {
 
         when (id) {
             R.id.action_add_product -> {
-                //startActivity(Intent(activity, AddProductActivity::class.java))
+                startActivity(Intent(activity, AddProductActivity::class.java))
 
                 return true
             }
@@ -96,6 +102,16 @@ class SellFragment : BaseFragment() {
         builder.setPositiveButton(resources.getString(R.string.yes)){dialogInterface,_ ->
             showProgressDialog(resources.getString(R.string.please_wait))
             FirestoreClass().deleteProduct(this,productID)
+
+//            if(flag) {
+//                @Suppress("DEPRECATION")
+//                Handler().postDelayed(
+//                    {
+//                        FirestoreClass().deleteProduct(this, productID)
+//                    },
+//                    1000
+//                )
+//            }
             dialogInterface.dismiss()
         }
 

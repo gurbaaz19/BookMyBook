@@ -9,7 +9,7 @@ object Constants {
 
     //Collections
     const val USERS: String = "users"
-    const val PRODUCT: String = "product"
+    const val PRODUCTS: String = "products"
     //
 
     const val RC_GOOGLE_SIGN_IN = 4926
@@ -35,6 +35,10 @@ object Constants {
     const val COMPLETE_PROFILE = "profileCompleted"
 
     const val PRODUCT_IMAGE: String = "Product_Image"
+
+    const val GOOD: String= "good"
+    const val AVERAGE: String= "average"
+    const val BAD: String= "bad"
 
     const val EXTRA_PRODUCT_ID: String = "extra_product_id"
 

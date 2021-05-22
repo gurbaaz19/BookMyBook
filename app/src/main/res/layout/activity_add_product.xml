@@ -165,6 +165,79 @@
                     android:textSize="@dimen/et_textSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <LinearLayout
+                android:id="@+id/ll_product_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_product_price">
+
+                <com.projectfire.bookmybook.utilities.TextViewMontserratBold
+                    android:id="@+id/tv_product_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:paddingTop="@dimen/et_padding"
+                    android:paddingBottom="8dp"
+                    android:text="@string/tv_product_condition"
+                    android:textSize="@dimen/et_textSize" />
+
+                <RadioGroup
+                    android:id="@+id/rg_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_radio_button_height"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal">
+
+                    <com.projectfire.bookmybook.utilities.RadioButtonMontserratBold
+                        android:id="@+id/rb_good"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/rb_good"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                        android:textStyle="bold" />
+
+                    <com.projectfire.bookmybook.utilities.RadioButtonMontserratBold
+                        android:id="@+id/rb_average"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/profile_radio_button_marginStartEnd"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:checked="true"
+                        android:text="@string/rb_average"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                        android:textStyle="bold" />
+
+                    <com.projectfire.bookmybook.utilities.RadioButtonMontserratBold
+                        android:id="@+id/rb_bad"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/profile_radio_button_marginStartEnd"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/rb_bad"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </LinearLayout>
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_product_description"
@@ -178,7 +251,7 @@
                 android:textColorHint="@color/colorSecondaryText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_product_price">
+                app:layout_constraintTop_toBottomOf="@id/ll_product_condition">
 
                 <com.projectfire.bookmybook.utilities.EditTextMontserratBold
                     android:id="@+id/et_product_description"

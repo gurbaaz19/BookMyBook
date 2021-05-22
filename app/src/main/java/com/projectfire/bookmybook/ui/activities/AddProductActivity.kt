@@ -11,16 +11,11 @@ import android.text.TextUtils
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.firebase.auth.FirebaseAuth
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.firestore.FirestoreClass
 import com.projectfire.bookmybook.models.Product
 import com.projectfire.bookmybook.utilities.Constants
-import com.shoppingapplication.R
-import com.shoppingapplication.firestore.FirestoreClass
-import com.shoppingapplication.models.Product
-import com.shoppingapplication.utilities.Constants
-import com.shoppingapplication.utilities.GlideLoader
+import com.projectfire.bookmybook.utilities.GlideLoader
 import kotlinx.android.synthetic.main.activity_add_product.*
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
@@ -208,6 +203,16 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         val username = this.getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE)
             .getString(Constants.LOGGED_IN_USERNAME, "")!!
 
+        var condition = ""
+        if (rb_good.isChecked) {
+            condition = Constants.GOOD
+        } else if (rb_average.isChecked) {
+            condition = Constants.AVERAGE
+        }
+        if (rb_bad.isChecked) {
+            condition = Constants.BAD
+        }
+
         val product = Product(
             FirestoreClass().getCurrentUserID(),
             username,
@@ -215,6 +220,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
             et_product_publisher.text.toString().trim { it <= ' ' },
             et_product_isbn.text.toString().trim { it <= ' ' },
             et_product_price.text.toString().trim { it <= ' ' },
+            condition,
             et_product_description.text.toString().trim { it <= ' ' },
             et_product_quantity.text.toString().trim { it <= ' ' },
             mProductImageURL

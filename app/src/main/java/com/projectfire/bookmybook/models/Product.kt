@@ -11,6 +11,7 @@ data class Product(
     val publisher: String = "",
     val isbn: String = "",
     val price: String = "",
+    val condition: String= "",
     val description: String = "",
     val stock_quantity: String = "",
     val image: String = "",
