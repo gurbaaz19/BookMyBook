@@ -14,10 +14,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.User
-import com.projectfire.bookmybook.utilities.Constants
-import com.projectfire.bookmybook.utilities.Constants.RC_GOOGLE_SIGN_IN
+import com.projectfire.bookmybook.Constants
+import com.projectfire.bookmybook.Constants.RC_GOOGLE_SIGN_IN
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -112,7 +112,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
                     if (task.isSuccessful) {
 
-                        FirestoreClass().getUserDetails(this@LoginActivity)
+                        FirebaseFunctionsClass().getUserDetails(this@LoginActivity)
 
                     } else {
                         showSnackBar(task.exception!!.message.toString(), true)
@@ -150,7 +150,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d("A", "firebaseAuthWithGoogle:" + account.id)
-                FirestoreClass().firebaseAuthWithGoogle(this@LoginActivity, account.idToken!!)
+                FirebaseFunctionsClass().firebaseAuthWithGoogle(this@LoginActivity, account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                     hideProgressDialog()

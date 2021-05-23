@@ -12,10 +12,10 @@ import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.Product
-import com.projectfire.bookmybook.utilities.Constants
-import com.projectfire.bookmybook.utilities.GlideLoader
+import com.projectfire.bookmybook.Constants
+import com.projectfire.bookmybook.GlideLoader
 import kotlinx.android.synthetic.main.activity_add_product.*
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
@@ -172,7 +172,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 
     private fun uploadProductImage() {
         showProgressDialog(resources.getString(R.string.please_wait))
-        FirestoreClass().uploadImageToCloudStorage(
+        FirebaseFunctionsClass().uploadImageToCloudStorage(
             this@AddProductActivity,
             mSelectedImageFileUri,
             Constants.PRODUCT_IMAGE
@@ -214,7 +214,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         }
 
         val product = Product(
-            FirestoreClass().getCurrentUserID(),
+            FirebaseFunctionsClass().getCurrentUserID(),
             username,
             et_product_title.text.toString().trim { it <= ' ' },
             et_product_publisher.text.toString().trim { it <= ' ' },
@@ -226,7 +226,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
             mProductImageURL
         )
 
-        FirestoreClass().uploadProductDetails(this@AddProductActivity, product)
+        FirebaseFunctionsClass().uploadProductDetails(this@AddProductActivity, product)
     }
 
 }

@@ -1,7 +1,6 @@
-package com.projectfire.bookmybook.utilities
+package com.projectfire.bookmybook
 
 import android.content.Context
-import android.net.Uri
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.projectfire.bookmybook.R

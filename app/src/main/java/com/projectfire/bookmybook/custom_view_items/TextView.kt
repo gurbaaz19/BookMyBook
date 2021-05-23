@@ -1,4 +1,4 @@
-package com.projectfire.bookmybook.utilities
+package com.projectfire.bookmybook.custom_view_items
 
 import android.content.Context
 import android.graphics.Typeface

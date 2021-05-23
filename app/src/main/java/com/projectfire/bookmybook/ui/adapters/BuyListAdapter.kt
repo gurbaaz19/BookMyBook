@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Product
-import com.projectfire.bookmybook.utilities.GlideLoader
+import com.projectfire.bookmybook.GlideLoader
 import kotlinx.android.synthetic.main.item_buy_layout.view.*
 
 open class BuyListAdapter(

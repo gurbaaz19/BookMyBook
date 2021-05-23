@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Product
-import com.projectfire.bookmybook.utilities.GlideLoader
+import com.projectfire.bookmybook.GlideLoader
 import com.projectfire.bookmybook.ui.fragments.SellFragment
 import kotlinx.android.synthetic.main.item_sell_layout.view.*
 

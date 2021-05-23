@@ -31,7 +31,7 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <com.projectfire.bookmybook.utilities.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -64,7 +64,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                             android:id="@+id/et_first_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_first_name">
 
-                        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                             android:id="@+id/et_last_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_last_name">
 
-                        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_email">
 
-                        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                             android:id="@+id/et_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_password">
 
-                        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                             android:id="@+id/et_confirm_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -197,7 +197,7 @@
 <!--                            android:textSize="@dimen/txt_terms_and_condition_textSize" />-->
 <!--                    </LinearLayout>-->
 
-                    <com.projectfire.bookmybook.utilities.ButtonMontserratBold
+                    <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
                         android:id="@+id/btn_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/btn_register">
 
-                        <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+                        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
                             android:id="@+id/tv_already_have_an_account"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -237,7 +237,7 @@
                             android:textColor="@color/colorSecondaryText"
                             android:textSize="@dimen/lbl_text_view_textSize" />
 
-                        <com.projectfire.bookmybook.utilities.TextViewMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
                             android:id="@+id/tv_login"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

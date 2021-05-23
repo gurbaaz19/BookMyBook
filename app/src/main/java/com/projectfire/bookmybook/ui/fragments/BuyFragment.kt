@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.Product
 //import com.projectfire.bookmybook.ui.activities.ProductDetailsActivity
 import com.projectfire.bookmybook.ui.activities.SettingsActivity
@@ -83,6 +83,6 @@ class BuyFragment : BaseFragment() {
     private fun getDashboardItemsList() {
         showProgressDialog(resources.getString(R.string.please_wait))
 
-        FirestoreClass().getDashboardItemsList(this@BuyFragment)
+        FirebaseFunctionsClass().getDashboardItemsList(this@BuyFragment)
     }
 }

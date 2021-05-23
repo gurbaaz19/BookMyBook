@@ -1,12 +1,12 @@
-package com.projectfire.bookmybook.utilities
+package com.projectfire.bookmybook.custom_view_items
 
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.appcompat.widget.AppCompatButton
 
-class RadioButtonMontserratRegular(context: Context, attrs: AttributeSet) :
-    AppCompatRadioButton(context, attrs) {
+class ButtonMontserratRegular(context: Context, attrs: AttributeSet) :
+    AppCompatButton(context, attrs) {
     init {
         applyFont()
     }
@@ -18,8 +18,8 @@ class RadioButtonMontserratRegular(context: Context, attrs: AttributeSet) :
     }
 }
 
-class RadioButtonMontserratBold(context: Context, attrs: AttributeSet) :
-    AppCompatRadioButton(context, attrs) {
+class ButtonMontserratBold(context: Context, attrs: AttributeSet) :
+    AppCompatButton(context, attrs) {
     init {
         applyFont()
     }

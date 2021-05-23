@@ -10,10 +10,10 @@ import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.User
-import com.projectfire.bookmybook.utilities.Constants
-import com.projectfire.bookmybook.utilities.GlideLoader
+import com.projectfire.bookmybook.Constants
+import com.projectfire.bookmybook.GlideLoader
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
 import kotlinx.android.synthetic.main.activity_user_profile.iv_user_photo
@@ -91,7 +91,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                         showProgressDialog(resources.getString(R.string.please_wait))
 
                         if (mSelectedImageFileUri != null) {
-                            FirestoreClass().uploadImageToCloudStorage(
+                            FirebaseFunctionsClass().uploadImageToCloudStorage(
                                 this@UserProfileActivity,
                                 mSelectedImageFileUri,
                                 Constants.USER_PROFILE_IMAGE
@@ -138,7 +138,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
         userHashMap[Constants.COMPLETE_PROFILE] = 1
 
-        FirestoreClass().updateUserProfileData(this, userHashMap)
+        FirebaseFunctionsClass().updateUserProfileData(this, userHashMap)
     }
 
     override fun onRequestPermissionsResult(

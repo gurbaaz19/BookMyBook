@@ -11,7 +11,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.User
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -139,7 +139,7 @@ class RegisterActivity : BaseActivity() {
                                 et_email.text.toString().trim { it <= ' ' }
                             )
 
-                            FirestoreClass().registerUser(this@RegisterActivity, user)
+                            FirebaseFunctionsClass().registerUser(this@RegisterActivity, user)
 
 //                            showErrorSnackBar(
 //                                "${resources.getString(R.string.registery_successfull)} ${firebaseUser.uid}",

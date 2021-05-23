@@ -3,17 +3,13 @@ package com.projectfire.bookmybook.ui.fragments
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.*
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
+import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.Product
 import com.projectfire.bookmybook.ui.activities.AddProductActivity
-import com.projectfire.bookmybook.ui.activities.DashboardActivity
-import com.projectfire.bookmybook.ui.activities.LoginActivity
 //import com.projectfire.bookmybook.ui.activities.AddProductActivity
 import com.projectfire.bookmybook.ui.adapters.SellListAdapter
 import kotlinx.android.synthetic.main.fragment_sell.*
@@ -60,7 +56,7 @@ class SellFragment : BaseFragment() {
 
     private fun getProductListFromFireStore() {
         showProgressDialog(resources.getString(R.string.please_wait))
-        FirestoreClass().getProductsList((this))
+        FirebaseFunctionsClass().getProductsList((this))
     }
 
     fun successProductsListFromFireStore(productsList: ArrayList<Product>) {
@@ -101,7 +97,7 @@ class SellFragment : BaseFragment() {
 
         builder.setPositiveButton(resources.getString(R.string.yes)){dialogInterface,_ ->
             showProgressDialog(resources.getString(R.string.please_wait))
-            FirestoreClass().deleteProduct(this,productID)
+            FirebaseFunctionsClass().deleteProduct(this,productID)
 
 //            if(flag) {
 //                @Suppress("DEPRECATION")

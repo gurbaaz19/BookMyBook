@@ -1,16 +1,9 @@
 package com.projectfire.bookmybook.ui.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.google.firebase.auth.FirebaseAuth
 import com.projectfire.bookmybook.R
-import com.projectfire.bookmybook.firestore.FirestoreClass
 import com.projectfire.bookmybook.models.User
-import com.projectfire.bookmybook.utilities.Constants
-import com.projectfire.bookmybook.utilities.GlideLoader
-import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : BaseActivity(), View.OnClickListener {
 

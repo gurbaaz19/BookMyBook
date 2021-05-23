@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
-    <com.projectfire.bookmybook.utilities.TextViewMontserratBold
+    <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         android:hint="@string/et_hint_email_id"
         android:textColorHint="@color/colorSecondaryText">
 
-        <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
             android:id="@+id/et_l_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_email">
 
-                <com.projectfire.bookmybook.utilities.EditTextMontserratBold
+                <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
                     android:id="@+id/et_l_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     android:textSize="@dimen/et_textSize"
                     tools:text="123456" />
             </com.google.android.material.textfield.TextInputLayout>
-    <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+    <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
         android:id="@+id/tv_forgot_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         android:textColor="@color/colorSecondaryText"
         android:textSize="@dimen/forgot_password_textSize"/>
 
-    <com.projectfire.bookmybook.utilities.ButtonMontserratBold
+    <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_textSize" />
 
-            <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
                 android:id="@+id/tv_or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
             android:id="@+id/tv_don_t_have_an_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/lbl_text_view_textSize" />
 
-        <com.projectfire.bookmybook.utilities.TextViewMontserratBold
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
             android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/lbl_text_view_textSize" />
     </LinearLayout>
-            <com.projectfire.bookmybook.utilities.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
                 android:id="@+id/tv_use_only_if_not_using_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

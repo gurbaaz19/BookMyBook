@@ -1,4 +1,4 @@
-package com.projectfire.bookmybook.firestore
+package com.projectfire.bookmybook
 
 import android.app.Activity
 import android.content.Context
@@ -22,9 +22,8 @@ import com.projectfire.bookmybook.models.User
 import com.projectfire.bookmybook.ui.activities.*
 import com.projectfire.bookmybook.ui.fragments.BuyFragment
 import com.projectfire.bookmybook.ui.fragments.SellFragment
-import com.projectfire.bookmybook.utilities.Constants
 
-class FirestoreClass {
+class FirebaseFunctionsClass {
 
     private val mFirestore = FirebaseFirestore.getInstance()
 
