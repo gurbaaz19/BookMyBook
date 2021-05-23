@@ -20,7 +20,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
+        jcenter() // Ask for replacement for using glide
     }
 }
 
