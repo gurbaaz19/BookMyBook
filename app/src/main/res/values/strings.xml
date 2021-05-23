@@ -67,9 +67,9 @@
 
     <string name="please_click_back_again_to_exit">Please click back again to exit.</string>
 
-    <string name="title_settings">Settings</string>
+    <string name="title_settings">SETTINGS</string>
 
-    <string name="lbl_edit">Edit</string>
+    <string name="lbl_edit">Edit Profile</string>
     <string name="lbl_addresses">Addresses</string>
     <string name="btn_lbl_logout">Logout</string>
 
@@ -123,4 +123,5 @@
     <string name="good_condition">Good Condition</string>
     <string name="bad_condition">Bad Condition</string>
     <string name="average_condition">Average Condition</string>
+    <string name="credits">Made With love by Gurbaaz, Saahir and Rochishnu</string>
 </resources>
