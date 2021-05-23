@@ -119,4 +119,8 @@
     <string name="lbl_total_amount">Total Amount</string>
     <string name="btn_lbl_checkout">Checkout</string>
     <string name="action_cart">My Cart</string>
+
+    <string name="good_condition">Good Condition</string>
+    <string name="bad_condition">Bad Condition</string>
+    <string name="average_condition">Average Condition</string>
 </resources>

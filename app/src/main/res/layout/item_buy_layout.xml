@@ -47,9 +47,19 @@
             android:textColor="@color/item_value_text_color"
             android:textSize="@dimen/dashboard_item_textSize"
             android:textStyle="bold"
-            tools:text="Item Name" />
+            tools:text="Book Name" />
 
         <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            android:id="@+id/tv_dashboard_item_publisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_item_price_marginTop"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/dashboard_item_textSize"
+            android:textStyle="bold"
+            tools:text="Publisher" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
             android:id="@+id/tv_dashboard_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

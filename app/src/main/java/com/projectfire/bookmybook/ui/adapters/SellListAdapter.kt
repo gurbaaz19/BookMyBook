@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.projectfire.bookmybook.Constants
+import com.projectfire.bookmybook.GlideLoader
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Product
-import com.projectfire.bookmybook.GlideLoader
 import com.projectfire.bookmybook.ui.fragments.SellFragment
 import kotlinx.android.synthetic.main.item_sell_layout.view.*
 
@@ -30,7 +31,24 @@ open class SellListAdapter(
         if (holder is MyViewHolder) {
             GlideLoader(context).loadProductPicture(model.image, holder.itemView.iv_item_image)
             holder.itemView.tv_item_name.text = model.title
+            holder.itemView.tv_item_publisher.text = model.publisher
+            when (model.condition) {
+                Constants.GOOD -> {
+                    holder.itemView.tv_item_condition.text = "Good Condition"
+                }
+                Constants.BAD -> {
+                    holder.itemView.tv_item_condition.text = "Bad Condition"
+                }
+                Constants.AVERAGE -> {
+                    holder.itemView.tv_item_condition.text = "Average Condition"
+                }
+            }
             holder.itemView.tv_item_price.text = "₹${model.price}"
+            if (model.isbn == "") {
+                holder.itemView.tv_item_isbn.text = model.isbn
+            } else {
+                holder.itemView.tv_item_isbn.text = "ISBN: ${model.isbn}"
+            }
             holder.itemView.ib_delete_product.setOnClickListener {
                 fragment.deleteProduct(model.product_id)
             }

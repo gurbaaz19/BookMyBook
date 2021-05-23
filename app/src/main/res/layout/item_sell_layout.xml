@@ -40,7 +40,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ib_delete_product"
         app:layout_constraintStart_toEndOf="@id/ll_item_image"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
             android:id="@+id/tv_item_name"
@@ -51,13 +52,36 @@
             tools:text="Name" />
 
         <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            android:id="@+id/tv_item_publisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/rv_item_price_textSize"
+            tools:text="Publisher" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            android:id="@+id/tv_item_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/rv_item_price_textSize"
+            tools:text="Condition" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            android:id="@+id/tv_item_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/rv_item_price_textSize"
+            tools:text="ISBN" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
             android:id="@+id/tv_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/rv_item_price_marginTop"
             android:textColor="@color/item_value_text_color"
             android:textSize="@dimen/rv_item_price_textSize"
-            android:textStyle="bold"
             tools:text="₹1000.00" />
     </LinearLayout>
 
