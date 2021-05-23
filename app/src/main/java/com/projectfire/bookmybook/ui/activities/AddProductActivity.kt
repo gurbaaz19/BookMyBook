@@ -43,6 +43,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+            actionBar.title=""
         }
 
         toolbar_add_product_activity.setNavigationOnClickListener { onBackPressed() }
