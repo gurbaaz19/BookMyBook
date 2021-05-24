@@ -18,8 +18,6 @@ open class BuyListAdapter(
     private var list: ArrayList<Product>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var onClickListener: OnClickListener? = null
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(
             LayoutInflater.from(context).inflate(R.layout.item_buy_layout, parent, false)
@@ -48,13 +46,6 @@ open class BuyListAdapter(
         return list.size
     }
 
-    fun setOnClickListener(onClickListener: OnClickListener){
-        this.onClickListener = onClickListener
-    }
-
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
-    interface OnClickListener{
-        fun onClick(position: Int, product: Product)
-    }
 }

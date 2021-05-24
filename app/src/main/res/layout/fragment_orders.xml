@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.OrdersFragment"
-    android:background="@drawable/app_gradient_color_background">
+    android:background="@drawable/app_gradient_color_background"
+    tools:context=".ui.fragments.OrdersFragment">
 
     <TextView
         android:id="@+id/text_notifications"
@@ -15,6 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

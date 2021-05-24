@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.BuyFragment"
     android:background="@drawable/app_gradient_color_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.fragments.BuyFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_dashboard_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:orientation="vertical"
-    android:gravity="center">
-    <TextView
-        android:id="@+id/tv_no_dashboard_items_found"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/no_dashboard_item_found"
-        android:textAlignment="center"
-        android:textSize="@dimen/no_data_found_textSize" />
-</LinearLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_no_dashboard_items_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/no_dashboard_item_found"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/no_data_found_textSize" />
+    </LinearLayout>
 </LinearLayout>
