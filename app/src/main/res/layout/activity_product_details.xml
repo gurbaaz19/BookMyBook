@@ -36,7 +36,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_product_detail_image">
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                     android:id="@+id/tv_product_details_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     android:textSize="@dimen/product_details_title_textSize"
                     tools:text="Book Title" />
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                     android:id="@+id/tv_product_details_publisher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                     android:textSize="@dimen/product_details_price_textSize"
                     tools:text="Book Publisher" />
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                     android:id="@+id/tv_product_details_isbn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                     android:textSize="@dimen/product_details_price_textSize"
                     tools:text="ISBN" />
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                     android:id="@+id/tv_product_details_condition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                     android:textSize="@dimen/product_details_price_textSize"
                     tools:text="Condition" />
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                     android:id="@+id/tv_product_details_price"
                     android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
@@ -118,7 +118,7 @@
                     tools:text="$100" />
             </LinearLayout>
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_product_details_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ll_product_details_title_price" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_product_details_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_product_details_description">
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                     android:id="@+id/tv_product_details_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                     android:textColor="@color/item_value_text_color"
                     android:textSize="@dimen/product_details_label_textSize" />
 
-                <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+                <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                     android:id="@+id/tv_product_details_available_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,7 +180,7 @@
                     tools:text="5" />
             </LinearLayout>
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/btn_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ll_product_details_quantity"
                 tools:visibility="visible" />
 
-            <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                 android:id="@+id/btn_go_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

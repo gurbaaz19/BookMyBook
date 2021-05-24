@@ -32,7 +32,7 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cv_user_image">
 
-                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
                             android:id="@+id/et_first_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_first_name">
 
-                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
                             android:id="@+id/et_last_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_last_name">
 
-                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_email">
 
-                        <com.projectfire.bookmybook.custom_view_items.EditTextMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
                             android:id="@+id/et_mobile_number"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
 
-                        <com.projectfire.bookmybook.custom_view_items.RadioButtonMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.RadioButtonCustomBold
                             android:id="@+id/rb_male"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -231,7 +231,7 @@
                             android:textColor="@drawable/drawable_gender_tab_text_color_selector"
                             android:textStyle="bold" />
 
-                        <com.projectfire.bookmybook.custom_view_items.RadioButtonMontserratBold
+                        <com.projectfire.bookmybook.custom_view_items.RadioButtonCustomBold
                             android:id="@+id/rb_female"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -245,7 +245,7 @@
                             android:textStyle="bold" />
                     </RadioGroup>
 
-                    <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+                    <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                         android:id="@+id/btn_submit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

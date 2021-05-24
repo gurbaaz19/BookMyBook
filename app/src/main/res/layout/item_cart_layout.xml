@@ -40,7 +40,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_cart_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:textSize="@dimen/cart_item_title_textSize"
             tools:text="Cart Book Title" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_cart_item_publisher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:textSize="@dimen/cart_item_price_textSize"
             tools:text="Cart Book Publisher" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_cart_item_isbn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             android:textSize="@dimen/cart_item_price_textSize"
             tools:text="Cart Book ISBN" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_cart_item_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                 android:padding="@dimen/ib_cart_item_padding"
                 android:src="@drawable/ic_vector_remove" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_cart_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

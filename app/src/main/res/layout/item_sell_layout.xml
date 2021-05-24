@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:textSize="@dimen/rv_item_name_textSize"
             tools:text="Name" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_item_publisher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:textSize="@dimen/rv_item_price_textSize"
             tools:text="Publisher" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_item_condition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:textSize="@dimen/rv_item_price_textSize"
             tools:text="Condition" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
             android:id="@+id/tv_item_isbn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:textSize="@dimen/rv_item_price_textSize"
             tools:text="ISBN" />
 
-        <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
             android:id="@+id/tv_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

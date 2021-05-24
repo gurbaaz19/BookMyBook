@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_cart_list_activity" />
 
-    <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+    <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
         android:id="@+id/tv_no_cart_item_found"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_sub_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,7 +107,7 @@
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_gst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -130,7 +130,7 @@
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_total_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                 tools:text="₹110" />
         </LinearLayout>
 
-        <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+        <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
             android:id="@+id/btn_checkout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

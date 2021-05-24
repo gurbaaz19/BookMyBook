@@ -17,7 +17,7 @@
 <!--        android:contentDescription="@string/app_name"-->
 <!--        android:src="@drawable/logo"/>-->
 
-    <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+    <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

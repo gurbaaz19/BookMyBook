@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatRadioButton
 
-class RadioButtonMontserratRegular(context: Context, attrs: AttributeSet) :
+class RadioButtonCustomRegular(context: Context, attrs: AttributeSet) :
     AppCompatRadioButton(context, attrs) {
     init {
         applyFont()
@@ -13,12 +13,12 @@ class RadioButtonMontserratRegular(context: Context, attrs: AttributeSet) :
 
     private fun applyFont() {
         val regularTypeface: Typeface =
-            Typeface.createFromAsset(context.assets, "Montserrat-Regular.ttf")
+            Typeface.createFromAsset(context.assets, "Mont-R.ttf")
         typeface = regularTypeface
     }
 }
 
-class RadioButtonMontserratBold(context: Context, attrs: AttributeSet) :
+class RadioButtonCustomBold(context: Context, attrs: AttributeSet) :
     AppCompatRadioButton(context, attrs) {
     init {
         applyFont()
@@ -26,7 +26,7 @@ class RadioButtonMontserratBold(context: Context, attrs: AttributeSet) :
 
     private fun applyFont() {
         val boldTypeface: Typeface =
-            Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
+            Typeface.createFromAsset(context.assets, "Mont-B.ttf")
         typeface = boldTypeface
     }
 }

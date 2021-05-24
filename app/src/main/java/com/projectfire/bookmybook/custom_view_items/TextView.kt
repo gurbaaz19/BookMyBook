@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
-class TextViewMontserratRegular(context: Context, attributeSet: AttributeSet): AppCompatTextView(context,attributeSet) {
+class TextViewCustomRegular(context: Context, attributeSet: AttributeSet): AppCompatTextView(context,attributeSet) {
 
     init{
         applyFont()
@@ -13,12 +13,12 @@ class TextViewMontserratRegular(context: Context, attributeSet: AttributeSet): A
 
     private fun applyFont() {
        val regularTypeface: Typeface =
-           Typeface.createFromAsset(context.assets,"Montserrat-Regular.ttf")
+           Typeface.createFromAsset(context.assets,"Mont-R.ttf")
         typeface= regularTypeface
     }
 }
 
-class TextViewMontserratBold(context: Context, attributeSet: AttributeSet): AppCompatTextView(context,attributeSet) {
+class TextViewCustomBold(context: Context, attributeSet: AttributeSet): AppCompatTextView(context,attributeSet) {
 
     init{
         applyFont()
@@ -26,7 +26,7 @@ class TextViewMontserratBold(context: Context, attributeSet: AttributeSet): AppC
 
     private fun applyFont() {
         val boldTypeface: Typeface =
-            Typeface.createFromAsset(context.assets,"Montserrat-Bold.ttf")
+            Typeface.createFromAsset(context.assets,"Mont-B.ttf")
         typeface= boldTypeface
     }
 }

@@ -32,7 +32,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_settings_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                 android:textSize="@dimen/settings_name_textSize"
                 tools:text="Gurbaaz Singh Gill" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                 android:textSize="@dimen/settings_info_textSize"
                 tools:text="Male" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:textSize="@dimen/settings_info_textSize"
                 tools:text="gurbaaz19@gmail.com" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewMontserratRegular
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_mobile_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
 
 <!--            </LinearLayout>-->
 
-                            <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+                            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -136,7 +136,7 @@
                                 android:text="@string/lbl_addresses"
                                 android:textColor="@android:color/white"
                                 android:textSize="@dimen/btn_textSize" />
-            <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                 android:id="@+id/btn_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/btn_textSize"  />
 
-            <com.projectfire.bookmybook.custom_view_items.ButtonMontserratBold
+            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                 android:id="@+id/btn_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-    <com.projectfire.bookmybook.custom_view_items.TextViewMontserratBold
+    <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/credits"
