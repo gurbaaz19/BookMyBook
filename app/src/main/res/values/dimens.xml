@@ -107,7 +107,8 @@
     <dimen name="ll_checkout_padding">16dp</dimen>
     <dimen name="checkout_label_value_textSize">18sp</dimen>
 
-    <dimen name="cart_item_marginTop">16dp</dimen>
+    <dimen name="cart_item_margin_hor">8dp</dimen>
+    <dimen name="cart_item_margin_ver">16dp</dimen>
     <dimen name="cart_item_paddingStartEnd">16dp</dimen>
     <dimen name="cart_item_paddingTopBottom">12dp</dimen>
     <dimen name="cart_item_image_padding">2dp</dimen>

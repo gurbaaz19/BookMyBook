@@ -13,6 +13,7 @@ import com.projectfire.bookmybook.models.CartItem
 import com.projectfire.bookmybook.models.Product
 import kotlinx.android.synthetic.main.activity_product_details.*
 import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.item_sell_layout.view.*
 
 class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
@@ -55,6 +56,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+            actionBar.title=""
         }
 
         toolbar_product_details_activity.setNavigationOnClickListener { onBackPressed() }
@@ -67,9 +69,27 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
             iv_product_detail_image
         )
         tv_product_details_title.text = product.title
+        tv_product_details_publisher.text = product.publisher
         tv_product_details_price.text = "₹${product.price}"
         tv_product_details_description.text = product.description
         tv_product_details_available_quantity.text = product.stock_quantity
+
+        when (product.condition) {
+            Constants.GOOD -> {
+                tv_product_details_condition.text = "Good Condition"
+            }
+            Constants.BAD -> {
+                tv_product_details_condition.text = "Bad Condition"
+            }
+            Constants.AVERAGE -> {
+                tv_product_details_condition.text = "Average Condition"
+            }
+        }
+        if (product.isbn == "") {
+            tv_product_details_isbn.text = product.isbn
+        } else {
+            tv_product_details_isbn.text = "ISBN: ${product.isbn}"
+        }
 
         if (product.stock_quantity.toInt() == 0) {
             hideProgressDialog()
