@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.FirebaseFunctionsClass
 import com.projectfire.bookmybook.models.Product
+import com.projectfire.bookmybook.ui.activities.CartListActivity
 //import com.projectfire.bookmybook.ui.activities.ProductDetailsActivity
 import com.projectfire.bookmybook.ui.activities.SettingsActivity
 import com.projectfire.bookmybook.ui.adapters.BuyListAdapter
@@ -47,6 +48,12 @@ class BuyFragment : BaseFragment() {
         when (id) {
             R.id.action_settings -> {
                 startActivity(Intent(activity, SettingsActivity::class.java))
+
+                return true
+            }
+
+            R.id.action_cart -> {
+                startActivity(Intent(activity, CartListActivity::class.java))
 
                 return true
             }
