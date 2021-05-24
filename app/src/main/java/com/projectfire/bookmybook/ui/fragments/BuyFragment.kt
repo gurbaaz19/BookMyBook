@@ -64,16 +64,6 @@ class BuyFragment : BaseFragment() {
             rv_my_dashboard_items.setHasFixedSize(true)
             val adapter = BuyListAdapter(requireActivity(), dashboardItemsList)
             rv_my_dashboard_items.adapter = adapter
-
-//            adapter.setOnClickListener(object : BuyListAdapter.OnClickListener{
-//                override fun onClick(position: Int, sell: Sell) {
-//                    val intent = Intent(context, ProductDetailsActivity::class.java)
-//                    intent.putExtra(Constants.EXTRA_PRODUCT_ID, sell.product_id)
-//                    intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, sell.user_id)
-//                    startActivity(intent)
-//                }
-//
-//            })
         } else {
             rv_my_dashboard_items.visibility = View.GONE
             tv_no_dashboard_items_found.visibility = View.VISIBLE

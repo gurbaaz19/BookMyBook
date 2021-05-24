@@ -115,7 +115,7 @@
     <string name="title_my_cart">MY CART</string>
     <string name="no_cart_item_found">No item found in cart!</string>
     <string name="lbl_subtotal">Subtotal</string>
-    <string name="lbl_shipping_charge">Shipping Charge</string>
+    <string name="lbl_service_charge">Service Charge (UwU)</string>
     <string name="lbl_total_amount">Total Amount</string>
     <string name="btn_lbl_checkout">Checkout</string>
     <string name="action_cart">My Cart</string>
@@ -124,4 +124,9 @@
     <string name="bad_condition">Bad Condition</string>
     <string name="average_condition">Average Condition</string>
     <string name="credits">Made With love by Gurbaaz, Saahir and Rochishnu</string>
+
+    <string name="lbl_out_of_stock">OUT OF STOCK</string>
+    <string name="msg_item_removed_successfully">Item removed successfully</string>
+    <string name="msg_for_available_stock">Available stock is %1$s!. You can not add more than the stock quantity.</string>
+
 </resources>

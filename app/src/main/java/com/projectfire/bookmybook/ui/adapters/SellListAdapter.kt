@@ -1,6 +1,7 @@
 package com.projectfire.bookmybook.ui.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.projectfire.bookmybook.Constants
 import com.projectfire.bookmybook.GlideLoader
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Product
+import com.projectfire.bookmybook.ui.activities.ProductDetailsActivity
 import com.projectfire.bookmybook.ui.fragments.SellFragment
 import kotlinx.android.synthetic.main.item_sell_layout.view.*
 
@@ -54,10 +56,10 @@ open class SellListAdapter(
             }
 
             holder.itemView.setOnClickListener {
-//                val intent = Intent(context,ProductDetailsActivity::class.java)
-//                intent.putExtra(Constants.EXTRA_PRODUCT_ID, model.product_id)
-//                intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, model.user_id)
-//                context.startActivity(intent)
+                val intent = Intent(context, ProductDetailsActivity::class.java)
+                intent.putExtra(Constants.EXTRA_PRODUCT_ID, model.product_id)
+                intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, model.user_id)
+                context.startActivity(intent)
             }
         }
     }

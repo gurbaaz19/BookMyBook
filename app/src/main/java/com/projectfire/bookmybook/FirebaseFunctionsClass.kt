@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
+import com.projectfire.bookmybook.models.CartItem
 import com.projectfire.bookmybook.models.Product
 import com.projectfire.bookmybook.models.User
 import com.projectfire.bookmybook.ui.activities.*
@@ -346,4 +347,161 @@ class FirebaseFunctionsClass {
             }
     }
 
+    fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
+        mFirestore.collection(Constants.PRODUCTS)
+            .document(productId)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e(activity.javaClass.simpleName, document.toString())
+                val product = document.toObject(Product::class.java)
+                if (product != null) {
+                    activity.productDetailsSuccess(product!!)
+                }
+            }
+            .addOnFailureListener { e ->
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while getting product details", e)
+            }
+
+    }
+
+    fun addCartItems(activity: ProductDetailsActivity, cartItem: CartItem) {
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document()
+            .set(cartItem, SetOptions.merge())
+            .addOnSuccessListener {
+                activity.addToCartSuccess()
+            }.addOnFailureListener { e ->
+                activity.hideProgressDialog()
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while creating the document for cart item.",
+                    e
+                )
+            }
+    }
+
+    fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String) {
+        mFirestore.collection(Constants.CART_ITEMS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .whereEqualTo(Constants.PRODUCT_ID, productId)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+
+                if (document.documents.size > 0) {
+                    activity.productExistsInCart()
+                } else {
+                    activity.hideProgressDialog()
+                }
+            }
+            .addOnFailureListener { e ->
+                activity.hideProgressDialog()
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while checking the existing cart list.",
+                    e
+                )
+            }
+    }
+
+    fun getCartList(activity: Activity) {
+        mFirestore.collection(Constants.CART_ITEMS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+                val list: ArrayList<CartItem> = ArrayList()
+
+                for (i in document.documents) {
+                    val cartItem = i.toObject(CartItem::class.java)!!
+
+                    cartItem.id = i.id
+                    list.add(cartItem)
+                }
+
+                when (activity) {
+                    is CartListActivity -> {
+                        activity.successCartItemList(list)
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+                when (activity) {
+                    is CartListActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                }
+
+                Log.e(activity.javaClass.simpleName, "Error while getting the cart list items", e)
+            }
+    }
+
+    fun getAllProductsList(activity: CartListActivity) {
+        mFirestore.collection(Constants.PRODUCTS)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e("Products List", document.documents.toString())
+                val productsList: ArrayList<Product> = ArrayList()
+                for (i in document.documents) {
+                    val product = i.toObject(Product::class.java)
+                    product!!.product_id = i.id
+
+                    productsList.add(product)
+                }
+
+                activity.successProductsListFromFireStore(productsList)
+
+            }
+            .addOnFailureListener { e ->
+                activity.hideProgressDialog()
+
+                Log.e("Get Product List", "Error while getting all product list.", e)
+            }
+    }
+
+    fun removeItemFromCart(context: Context,cart_id:String){
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document(cart_id)
+            .delete()
+            .addOnSuccessListener {
+                when(context){
+                    is CartListActivity -> {
+                        context.itemRemovedSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener {e->
+                when(context){
+                    is CartListActivity -> {
+                        context.hideProgressDialog()
+                    }
+                }
+                Log.e(context.javaClass.simpleName,"Error while removing the item from cart",e)
+            }
+    }
+
+    fun updateMyCart(context: Context,card_id:String,itemHashMap: HashMap<String,Any>){
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document(card_id)
+            .update(itemHashMap)
+            .addOnSuccessListener {
+                when(context){
+                    is CartListActivity -> {
+                        context.updateItemSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when(context){
+                    is CartListActivity -> {
+                        context.hideProgressDialog()
+                    }
+                }
+
+                Log.e(context.javaClass.simpleName,"Error while updating the cart item",e)
+            }
+    }
 }
