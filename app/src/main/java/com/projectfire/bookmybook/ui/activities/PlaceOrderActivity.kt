@@ -15,6 +15,9 @@ import com.projectfire.bookmybook.models.User
 import com.projectfire.bookmybook.ui.adapters.CartItemsPlaceOrderListAdapter
 import kotlinx.android.synthetic.main.activity_place_order.*
 import kotlinx.android.synthetic.main.activity_settings.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PlaceOrderActivity : BaseActivity() {
 
@@ -134,18 +137,28 @@ class PlaceOrderActivity : BaseActivity() {
 
     private fun placeOrder() {
         showProgressDialog(resources.getString(R.string.please_wait))
+
+        val date = "dd MMM yyyy HH:mm"
+        val formatter = SimpleDateFormat(date, Locale.getDefault())
+        val calendarInstance: Calendar = Calendar.getInstance()
+        calendarInstance.timeInMillis = System.currentTimeMillis()
+        val orderDate = formatter.format(calendarInstance.time)
+
         val userId = FirebaseFunctionsClass().getCurrentUserID()
         val order = Order(
             userId,
+            "${mUser.firstName} ${mUser.lastName}",
             mCartList,
             mUser.address,
             mUser.pin.toString(),
-            "Order of ${mUser.firstName} ${mUser.lastName} (${userId}) at ${System.currentTimeMillis()}",
+            mUser.mobile.toString(),
+            "Order of ${mUser.firstName} ${mUser.lastName} (${userId}) at ${orderDate}",
             mCartList[0].image,
             mSubTotal.toString(),
             "50.0",
             mTotal.toString(),
-            System.currentTimeMillis()
+            orderDate,
+            "${mUser.firstName}/${System.currentTimeMillis()}"
         )
 
         FirebaseFunctionsClass().placeOrder(this@PlaceOrderActivity, order)

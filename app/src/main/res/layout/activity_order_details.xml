@@ -30,6 +30,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,34 +42,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="@string/title_product_details"
+                    android:text="@string/title_order_details"
                     android:textColor="@color/colorPrimaryText"
-                    android:textSize="@dimen/title_textSize"/>
+                    android:textSize="@dimen/title_textSize" />
 
-                <LinearLayout
-                    android:id="@+id/ll_rv_order"
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/ll_rv_order"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="200dp"-->
+                <!--                    android:layout_margin="16dp"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:background="@drawable/item_dashboard_background"-->
+                <!--                    android:padding="@dimen/item_image_padding">-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ordered_items"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@drawable/item_dashboard_background"
-                    android:padding="@dimen/item_image_padding"
+                    android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/cart_item_margin_ver"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/ll_checkout_place_order"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_cart_list_items"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginBottom="@dimen/cart_item_margin_ver"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@id/ll_checkout_place_order"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/toolbar_place_order_activity" />
 
-                </LinearLayout>
                 <LinearLayout
                     android:id="@+id/ll_address"
                     android:layout_width="match_parent"
@@ -85,12 +85,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
+                        android:text="Address"
                         android:textColor="@color/item_value_text_color"
-                        android:textSize="@dimen/item_address_name_textSize"
-                        android:text="Address" />
+                        android:textSize="@dimen/item_address_name_textSize" />
 
                     <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
-                        android:id="@+id/tv_checkout_full_name"
+                        android:id="@+id/tv_order_full_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/item_value_text_color"
@@ -98,7 +98,7 @@
                         tools:text="Gurbaaz Singh Gill" />
 
                     <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:id="@+id/tv_checkout_address"
+                        android:id="@+id/tv_order_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/address_details_marginTop"
@@ -108,7 +108,7 @@
 
 
                     <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:id="@+id/tv_checkout_mobile_number"
+                        android:id="@+id/tv_order_mobile_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/address_details_marginTop"
@@ -116,6 +116,7 @@
                         android:textSize="@dimen/address_details_textSize"
                         tools:text="420-69-420" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_order_details"
                     android:layout_width="match_parent"
@@ -127,17 +128,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:visibility="visible">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/order_id"
-                            android:textColor="@color/colorDarkGrey"
+                            android:textColor="@color/item_value_text_color"
                             android:textSize="@dimen/checkout_label_value_textSize" />
 
                         <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
@@ -145,8 +147,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            android:textColor="@color/colorSecondaryText"
-                            android:textSize="@dimen/checkout_label_value_textSize"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="14sp"
                             tools:text="23456" />
                     </LinearLayout>
 
@@ -155,12 +157,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/order_date"
-                            android:textColor="@color/colorDarkGrey"
+                            android:textColor="@color/item_value_text_color"
                             android:textSize="@dimen/checkout_label_value_textSize" />
 
                         <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
@@ -168,8 +170,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            android:textColor="@color/colorSecondaryText"
-                            android:textSize="@dimen/checkout_label_value_textSize"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="14sp"
                             tools:text="₹10" />
                     </LinearLayout>
 
@@ -183,20 +185,23 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/status"
-                            android:textColor="@color/colorDarkGrey"
-                            android:textSize="@dimen/checkout_label_value_textSize" />
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize"
+                            android:visibility="gone" />
 
                         <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
                             android:id="@+id/tv_order_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            android:textColor="@color/colorDarkGrey"
+                            android:textColor="@color/item_value_text_color"
                             android:textSize="@dimen/checkout_label_value_textSize"
+                            android:visibility="gone"
                             tools:text="PENDING" />
                     </LinearLayout>
                 </LinearLayout>
-<LinearLayout
+
+                <LinearLayout
                     android:id="@+id/ll_cost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -207,75 +212,76 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:visibility="visible">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/lbl_subtotal"
-                        android:textColor="@color/colorDarkGrey"
-                        android:textSize="@dimen/checkout_label_value_textSize" />
+                        android:orientation="horizontal">
 
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:id="@+id/tv_sub_total"
-                        android:layout_width="wrap_content"
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/lbl_subtotal"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize" />
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                            android:id="@+id/tv_sub_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize"
+                            tools:text="₹100" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorSecondaryText"
-                        android:textSize="@dimen/checkout_label_value_textSize"
-                        tools:text="₹100" />
+                        android:orientation="horizontal">
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/lbl_service_charge"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize" />
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                            android:id="@+id/tv_order_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize"
+                            tools:text="₹10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/lbl_total_amount"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize" />
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                            android:id="@+id/tv_total_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize"
+                            tools:text="₹110" />
+                    </LinearLayout>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/lbl_service_charge"
-                        android:textColor="@color/colorDarkGrey"
-                        android:textSize="@dimen/checkout_label_value_textSize" />
-
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                        android:id="@+id/tv_gst"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorSecondaryText"
-                        android:textSize="@dimen/checkout_label_value_textSize"
-                        tools:text="₹10" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/lbl_total_amount"
-                        android:textColor="@color/colorDarkGrey"
-                        android:textSize="@dimen/checkout_label_value_textSize" />
-
-                    <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
-                        android:id="@+id/tv_total_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorDarkGrey"
-                        android:textSize="@dimen/checkout_label_value_textSize"
-                        tools:text="₹110" />
-                </LinearLayout>
-</LinearLayout>
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>

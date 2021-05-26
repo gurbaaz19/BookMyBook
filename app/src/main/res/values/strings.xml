@@ -148,4 +148,5 @@
 
     <string name="order_status_pending">PENDING</string>
     <string name="order_status_delivered">DELIVERED</string>
+    <string name="title_order_details">ORDER DETAILS</string>
 </resources>
