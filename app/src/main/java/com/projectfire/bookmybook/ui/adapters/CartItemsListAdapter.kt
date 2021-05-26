@@ -13,11 +13,10 @@ import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.CartItem
 import com.projectfire.bookmybook.ui.activities.CartListActivity
 import kotlinx.android.synthetic.main.item_cart_layout.view.*
-import kotlinx.android.synthetic.main.item_sell_layout.view.*
 
 open class CartItemsListAdapter(
     private val context: Context,
-    private var list: ArrayList<CartItem>
+    private var list: ArrayList<CartItem>,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(
@@ -36,7 +35,7 @@ open class CartItemsListAdapter(
             GlideLoader(context).loadProductPicture(model.image, holder.itemView.iv_cart_item_image)
             holder.itemView.tv_cart_item_title.text = model.title
             holder.itemView.tv_cart_item_price.text = "₹${model.price}"
-            holder.itemView.tv_cart_item_publisher.text= model.publisher
+            holder.itemView.tv_cart_item_publisher.text = model.publisher
             holder.itemView.tv_cart_quantity.text = model.cart_quantity
             if (model.isbn == "") {
                 holder.itemView.tv_cart_item_isbn.text = model.isbn
@@ -58,8 +57,9 @@ open class CartItemsListAdapter(
                     )
                 )
             } else {
-                holder.itemView.ib_remove_cart_item.visibility = View.VISIBLE
-                holder.itemView.ib_add_cart_item.visibility = View.VISIBLE
+                    holder.itemView.ib_delete_cart_item.visibility = View.VISIBLE
+                    holder.itemView.ib_remove_cart_item.visibility = View.VISIBLE
+                    holder.itemView.ib_add_cart_item.visibility = View.VISIBLE
 
                 holder.itemView.tv_cart_quantity.setTextColor(
                     ContextCompat.getColor(

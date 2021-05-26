@@ -3,7 +3,6 @@ package com.projectfire.bookmybook.ui.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.projectfire.bookmybook.Constants
 import com.projectfire.bookmybook.FirebaseFunctionsClass
@@ -56,7 +55,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
-            actionBar.title=""
+            actionBar.title = ""
         }
 
         toolbar_product_details_activity.setNavigationOnClickListener { onBackPressed() }
@@ -133,12 +132,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
     fun addToCartSuccess() {
         hideProgressDialog()
-        Toast.makeText(
-            this@ProductDetailsActivity,
-            resources.getString(R.string.success_message_item_added_to_cart),
-            Toast.LENGTH_SHORT
-        ).show()
-
+        showSnackBar(resources.getString(R.string.success_message_item_added_to_cart), false)
         btn_add_to_cart.visibility = View.GONE
         btn_go_to_cart.visibility = View.VISIBLE
     }

@@ -18,10 +18,12 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.projectfire.bookmybook.models.CartItem
+import com.projectfire.bookmybook.models.Order
 import com.projectfire.bookmybook.models.Product
 import com.projectfire.bookmybook.models.User
 import com.projectfire.bookmybook.ui.activities.*
 import com.projectfire.bookmybook.ui.fragments.BuyFragment
+import com.projectfire.bookmybook.ui.fragments.OrdersFragment
 import com.projectfire.bookmybook.ui.fragments.SellFragment
 
 class FirebaseFunctionsClass {
@@ -89,6 +91,9 @@ class FirebaseFunctionsClass {
                         activity.userLoggedInSuccess(user)
                     }
                     is SettingsActivity -> {
+                        activity.userDetailsSuccess(user)
+                    }
+                    is PlaceOrderActivity-> {
                         activity.userDetailsSuccess(user)
                     }
                 }
@@ -426,11 +431,18 @@ class FirebaseFunctionsClass {
                     is CartListActivity -> {
                         activity.successCartItemList(list)
                     }
+
+                    is PlaceOrderActivity->{
+                        activity.successCartItemsList(list)
+                    }
                 }
             }
             .addOnFailureListener { e ->
                 when (activity) {
                     is CartListActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                    is PlaceOrderActivity -> {
                         activity.hideProgressDialog()
                     }
                 }
@@ -439,7 +451,7 @@ class FirebaseFunctionsClass {
             }
     }
 
-    fun getAllProductsList(activity: CartListActivity) {
+    fun getAllProductsList(activity: Activity) {
         mFirestore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
@@ -451,13 +463,24 @@ class FirebaseFunctionsClass {
 
                     productsList.add(product)
                 }
-
-                activity.successProductsListFromFireStore(productsList)
-
+                when (activity) {
+                    is CartListActivity -> {
+                        activity.successProductsListFromFireStore(productsList)
+                    }
+                    is PlaceOrderActivity -> {
+                        activity.successProductsListFromFireStore(productsList)
+                    }
+                }
             }
             .addOnFailureListener { e ->
-                activity.hideProgressDialog()
-
+                when (activity) {
+                    is CartListActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                    is PlaceOrderActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                }
                 Log.e("Get Product List", "Error while getting all product list.", e)
             }
     }
@@ -502,6 +525,21 @@ class FirebaseFunctionsClass {
                 }
 
                 Log.e(context.javaClass.simpleName,"Error while updating the cart item",e)
+            }
+    }
+
+    fun placeOrder(activity: PlaceOrderActivity, order: Order){
+        mFirestore.collection(Constants.ORDERS)
+            .document()
+            .set(order, SetOptions.merge())
+            .addOnSuccessListener {
+                activity.orderSuccess()
+            }
+            .addOnFailureListener { e->
+
+                activity.hideProgressDialog()
+
+                Log.e(activity.javaClass.simpleName,"Error while placing order",e)
             }
     }
 }

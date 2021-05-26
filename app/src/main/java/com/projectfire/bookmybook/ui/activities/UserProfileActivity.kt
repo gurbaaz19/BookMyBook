@@ -57,6 +57,14 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             } else {
                 rb_female.isChecked = true
             }
+
+            if (mUserDetails.pin != 0L) {
+                et_pin.setText(mUserDetails.pin.toString())
+            }
+
+            if (mUserDetails.address != ""){
+                et_address.setText(mUserDetails.address)
+            }
         }
 
         iv_user_photo.setOnClickListener(this@UserProfileActivity)
@@ -119,6 +127,8 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         val mobileNumber = et_mobile_number.text.toString().trim { it <= ' ' }
+        val address = et_address.text.toString().trim { it <= ' ' }
+        val pin = et_pin.text.toString().trim { it <= ' ' }
 
         val gender = if (rb_male.isChecked) {
             Constants.MALE
@@ -133,6 +143,15 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         if (mobileNumber.isNotEmpty() && mobileNumber != mUserDetails.mobile.toString()) {
             userHashMap[Constants.MOBILE] = mobileNumber.toLong()
         }
+
+        if (address.isNotEmpty() && address != mUserDetails.address) {
+            userHashMap[Constants.ADDRESS] = address
+        }
+
+        if (pin.isNotEmpty() && pin != mUserDetails.pin.toString()) {
+            userHashMap[Constants.PIN] = pin.toLong()
+        }
+
         if (gender.isNotEmpty() && gender != mUserDetails.gender)
             userHashMap[Constants.GENDER] = gender
 
@@ -190,6 +209,14 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         return when {
             TextUtils.isEmpty(et_mobile_number.text.toString().trim { it <= ' ' }) -> {
                 showSnackBar(resources.getString(R.string.err_msg_enter_mobile_number), true)
+                false
+            }
+            TextUtils.isEmpty(et_address.text.toString().trim { it <= ' ' }) -> {
+                showSnackBar(resources.getString(R.string.err_msg_enter_address), true)
+                false
+            }
+            TextUtils.isEmpty(et_pin.text.toString().trim { it <= ' ' }) -> {
+                showSnackBar(resources.getString(R.string.err_msg_enter_pin), true)
                 false
             }
             else -> {

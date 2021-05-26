@@ -10,6 +10,8 @@ object Constants {
     //Collections
     const val USERS: String = "users"
     const val PRODUCTS: String = "products"
+    const val ORDERS: String = "orders"
+    const val CART_ITEMS: String = "cart_items"
     //
 
     const val RC_GOOGLE_SIGN_IN = 4926
@@ -29,6 +31,8 @@ object Constants {
     const val FEMALE: String = "female"
     const val IMAGE: String = "image"
     const val USER_PROFILE_IMAGE: String = "User_Profile_Image"
+    const val ADDRESS: String = "address"
+    const val PIN: String = "pin"
 
     const val USER_ID: String = "user_id"
 
@@ -45,8 +49,6 @@ object Constants {
     const val EXTRA_PRODUCT_OWNER_ID: String = "extra_product_owner_id"
 
     const val DEFAULT_CART_QUANTITY: String = "1"
-
-    const val CART_ITEMS: String = "cart_items"
 
     const val PRODUCT_ID: String = "product_id"
 

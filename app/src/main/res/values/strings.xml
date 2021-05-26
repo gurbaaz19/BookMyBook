@@ -129,4 +129,16 @@
     <string name="msg_item_removed_successfully">Item removed successfully</string>
     <string name="msg_for_available_stock">Available stock is %1$s!. You can not add more than the stock quantity.</string>
 
+    <string name="title_checkout">CHECKOUT</string>
+    <string name="checkout_lbl_product_items">Product Items</string>
+    <string name="checkout_lbl_selected_address">Selected Address</string>
+    <string name="checkout_lbl_items_receipt">Items Receipt</string>
+    <string name="lbl_payment_mode">Payment Mode</string>
+    <string name="lbl_cash_on_delivery">Cash On Delivery</string>
+    <string name="btn_lbl_place_order">PLACE ORDER</string>
+    <string name="et_hint_address">Address</string>
+    <string name="et_hint_pin">PIN</string>
+    <string name="err_msg_enter_address">Please enter your Address.</string>
+    <string name="err_msg_enter_pin">Please enter your PIN Code.</string>
+    <string name="title_place_order">PLACE ORDER</string>
 </resources>

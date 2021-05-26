@@ -1,5 +1,6 @@
 package com.projectfire.bookmybook.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -22,6 +23,11 @@ class CartListActivity : BaseActivity() {
         setContentView(R.layout.activity_cart_list)
 
         setupActionBar()
+
+        btn_checkout.setOnClickListener {
+            val intent = Intent(this,PlaceOrderActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -70,7 +76,7 @@ class CartListActivity : BaseActivity() {
 
             rv_cart_items_list.layoutManager = LinearLayoutManager(this@CartListActivity)
             rv_cart_items_list.setHasFixedSize(true)
-            val cartListAdapter = CartItemsListAdapter(this@CartListActivity, cartList)
+            val cartListAdapter = CartItemsListAdapter(this@CartListActivity, mCartListItems)
             rv_cart_items_list.adapter = cartListAdapter
             var subTotal = 0.0
             var service = 50.0

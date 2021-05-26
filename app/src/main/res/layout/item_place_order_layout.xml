@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/cart_item_margin_hor"
+    android:layout_marginBottom="@dimen/cart_item_margin_hor"
+    android:layout_marginStart="@dimen/cart_item_margin_ver"
+    android:layout_marginEnd="@dimen/cart_item_margin_ver"
+    android:background="@drawable/item_dashboard_background"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/cart_item_paddingStartEnd"
+    android:paddingTop="@dimen/cart_item_paddingTopBottom"
+    android:paddingEnd="@dimen/cart_item_paddingStartEnd"
+    android:paddingBottom="@dimen/cart_item_paddingTopBottom">
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_dashboard_background"
+        android:padding="@dimen/cart_item_image_padding">
+
+        <ImageView
+            android:id="@+id/iv_cart_item_image"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:background="@color/colorImageViewBackground"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/cart_item_details_marginStart"
+        android:layout_marginEnd="@dimen/cart_item_details_marginEnd"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+            android:id="@+id/tv_cart_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/cart_item_title_textSize"
+            tools:text="Cart Book Title" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+            android:id="@+id/tv_cart_item_publisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/cart_item_price_textSize"
+            tools:text="Cart Book Publisher" />
+
+        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+            android:id="@+id/tv_cart_item_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/cart_item_price_textSize"
+            tools:text="Cart Book ISBN" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_update_cart_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                android:id="@+id/tv_cart_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/item_value_text_color"
+                android:textSize="@dimen/cart_item_price_textSize"
+                android:textStyle="bold"
+                tools:text="₹100" />
+
+            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                android:id="@+id/tv_cart_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_grey_border_background"
+                android:paddingStart="@dimen/cart_quantity_paddingStartEnd"
+                android:paddingTop="@dimen/cart_quantity_paddingTopBottom"
+                android:paddingEnd="@dimen/cart_quantity_paddingStartEnd"
+                android:paddingBottom="@dimen/cart_quantity_paddingTopBottom"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/cart_quantity_textSize"
+                android:textStyle="bold"
+                tools:text="1" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

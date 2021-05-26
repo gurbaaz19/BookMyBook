@@ -120,27 +120,28 @@
 
 <!--            </LinearLayout>-->
 
-                            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="@dimen/settings_button_marginStartEnd"
-                                android:layout_marginTop="32dp"
-                                android:layout_marginEnd="@dimen/settings_button_marginStartEnd"
-                                android:layout_marginBottom="@dimen/settings_button_marginTopBottom"
-                                android:background="@drawable/button_background"
-                                android:foreground="?attr/selectableItemBackground"
-                                android:gravity="center"
-                                android:paddingTop="@dimen/btn_padding"
-                                android:paddingBottom="@dimen/btn_padding"
-                                android:text="@string/lbl_addresses"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/btn_textSize" />
+<!--                            <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="@dimen/settings_button_marginStartEnd"-->
+<!--                                android:layout_marginTop="32dp"-->
+<!--                                android:layout_marginEnd="@dimen/settings_button_marginStartEnd"-->
+<!--                                android:layout_marginBottom="@dimen/settings_button_marginTopBottom"-->
+<!--                                android:background="@drawable/button_background"-->
+<!--                                android:foreground="?attr/selectableItemBackground"-->
+<!--                                android:gravity="center"-->
+<!--                                android:paddingTop="@dimen/btn_padding"-->
+<!--                                android:paddingBottom="@dimen/btn_padding"-->
+<!--                                android:text="@string/lbl_addresses"-->
+<!--                                android:textColor="@android:color/white"-->
+<!--                                android:textSize="@dimen/btn_textSize" />-->
             <com.projectfire.bookmybook.custom_view_items.ButtonCustomBold
                 android:id="@+id/btn_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="32dp"
                 android:layout_marginStart="@dimen/settings_button_marginStartEnd"
                 android:layout_marginEnd="@dimen/settings_button_marginStartEnd"
                 android:layout_marginBottom="@dimen/settings_button_marginTopBottom"

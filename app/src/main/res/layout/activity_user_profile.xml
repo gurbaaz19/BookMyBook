@@ -204,6 +204,56 @@
                             android:textSize="@dimen/et_textSize" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_address"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint="@string/et_hint_address"
+                        android:textColorHint="@color/colorSecondaryText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
+
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
+                            android:id="@+id/et_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:padding="@dimen/et_padding"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="@dimen/et_textSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_pin"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint="@string/et_hint_pin"
+                        android:textColorHint="@color/colorSecondaryText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/til_address">
+
+                        <com.projectfire.bookmybook.custom_view_items.EditTextCustomBold
+                            android:id="@+id/et_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLength="6"
+                            android:padding="@dimen/et_padding"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="@dimen/et_textSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <RadioGroup
                         android:id="@+id/rg_gender"
                         android:layout_width="match_parent"
@@ -215,7 +265,7 @@
                         app:layout_constraintBottom_toTopOf="@id/btn_submit"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
+                        app:layout_constraintTop_toBottomOf="@id/til_pin">
 
                         <com.projectfire.bookmybook.custom_view_items.RadioButtonCustomBold
                             android:id="@+id/rb_male"
