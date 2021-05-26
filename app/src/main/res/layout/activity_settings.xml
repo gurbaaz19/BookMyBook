@@ -66,14 +66,14 @@
                 android:textSize="@dimen/settings_name_textSize"
                 tools:text="Gurbaaz Singh Gill" />
 
-            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
-                android:id="@+id/tv_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/settings_info_marginTop"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/settings_info_textSize"
-                tools:text="Male" />
+<!--            <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular-->
+<!--                android:id="@+id/tv_gender"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/settings_info_marginTop"-->
+<!--                android:textColor="@color/colorSecondaryText"-->
+<!--                android:textSize="@dimen/settings_info_textSize"-->
+<!--                tools:text="Male" />-->
 
             <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
                 android:id="@+id/tv_email"
