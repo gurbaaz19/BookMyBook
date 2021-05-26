@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_dummy_1"
-        android:title="Dummy 1" />
+        android:title="Dummy 1"/>
 
     <item
         android:id="@+id/navigation_buy"
