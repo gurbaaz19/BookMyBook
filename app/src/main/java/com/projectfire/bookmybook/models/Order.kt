@@ -14,5 +14,6 @@ data class Order(
     val sub_total_amount: String = "",
     val service_charge: String = "",
     val total_amount: String = "",
+    val time: Long = 0L,
     var id: String = ""
 ) : Parcelable

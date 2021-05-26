@@ -7,17 +7,17 @@
 
     <item
         android:id="@+id/navigation_buy"
-        android:icon="@drawable/ic_vector_dashboard"
+        android:icon="@drawable/ic_vector_buy"
         android:title="@string/title_Buy" />
 
     <item
         android:id="@+id/navigation_sell"
-        android:icon="@drawable/ic_vector_products"
+        android:icon="@drawable/ic_vector_sell"
         android:title="@string/title_Sell" />
 
     <item
         android:id="@+id/navigation_orders"
-        android:icon="@drawable/ic_vector_orders"
+        android:icon="@drawable/ic_vector_order"
         android:title="@string/title_Orders"/>
 
     <item

@@ -1,6 +1,7 @@
 package com.projectfire.bookmybook.ui.activities
 
 import android.content.Intent
+import android.graphics.fonts.SystemFonts
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -144,6 +145,7 @@ class PlaceOrderActivity : BaseActivity() {
             mSubTotal.toString(),
             "50.0",
             mTotal.toString(),
+            System.currentTimeMillis()
         )
 
         FirebaseFunctionsClass().placeOrder(this@PlaceOrderActivity, order)

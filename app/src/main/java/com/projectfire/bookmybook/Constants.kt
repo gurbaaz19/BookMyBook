@@ -55,6 +55,8 @@ object Constants {
     const val CART_QUANTITY: String ="cart_quantity"
     const val STOCK_QUANTITY: String = "stock_quantity"
 
+    const val EXTRA_ORDER_DETAILS: String = "EXTRA_ORDER_DETAILS"
+
     fun showImageChooser(activity: Activity) {
         // intent to launch image selection from phone
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)

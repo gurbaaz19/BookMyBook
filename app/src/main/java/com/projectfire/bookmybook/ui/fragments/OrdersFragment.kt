@@ -49,7 +49,6 @@ class OrdersFragment : BaseFragment() {
         if(ordersList.size>0){
             rv_my_order_items.visibility=View.VISIBLE
             tv_no_orders_found.visibility=View.GONE
-            tv_dashboard_item_publisher.visibility=View.GONE
 
             rv_my_order_items.layoutManager = GridLayoutManager(activity,1)
             rv_my_order_items.setHasFixedSize(true)
@@ -59,7 +58,6 @@ class OrdersFragment : BaseFragment() {
         else{
             rv_my_order_items.visibility=View.GONE
             tv_no_orders_found.visibility=View.VISIBLE
-            tv_dashboard_item_publisher.visibility=View.GONE
         }
     }
 }

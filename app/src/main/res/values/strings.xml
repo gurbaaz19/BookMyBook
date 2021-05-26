@@ -142,4 +142,10 @@
     <string name="title_place_order">PLACE ORDER</string>
 
     <string name="no_orders_placed_yet">No orders placed !!!</string>
+    <string name="order_id">Order ID</string>
+    <string name="order_date">Order Date</string>
+    <string name="status">STATUS</string>
+
+    <string name="order_status_pending">PENDING</string>
+    <string name="order_status_delivered">DELIVERED</string>
 </resources>
