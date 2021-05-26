@@ -28,11 +28,11 @@ import com.projectfire.bookmybook.ui.fragments.SellFragment
 
 class FirebaseFunctionsClass {
 
-    private val mFirestore = FirebaseFirestore.getInstance()
+    private val mFirestoreInstance = FirebaseFirestore.getInstance()
 
     fun registerUser(activity: RegisterActivity, userInfo: User) {
         //If collection is not present, it will create it
-        mFirestore.collection(Constants.USERS)
+        mFirestoreInstance.collection(Constants.USERS)
             //Getting document id, here it is same as id
             .document(userInfo.id)
             //If we want to merge the data instead of replacing the complete thing
@@ -64,7 +64,7 @@ class FirebaseFunctionsClass {
 
     fun getUserDetails(activity: Activity) {
         //collection name
-        mFirestore.collection(Constants.USERS)
+        mFirestoreInstance.collection(Constants.USERS)
             //get document id
             .document(getCurrentUserID())
             .get()
@@ -93,7 +93,7 @@ class FirebaseFunctionsClass {
                     is SettingsActivity -> {
                         activity.userDetailsSuccess(user)
                     }
-                    is PlaceOrderActivity-> {
+                    is PlaceOrderActivity -> {
                         activity.userDetailsSuccess(user)
                     }
                 }
@@ -114,7 +114,7 @@ class FirebaseFunctionsClass {
     }
 
     fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>) {
-        mFirestore.collection(Constants.USERS)
+        mFirestoreInstance.collection(Constants.USERS)
             .document(getCurrentUserID())
             .update(userHashMap)
             .addOnSuccessListener {
@@ -193,7 +193,7 @@ class FirebaseFunctionsClass {
 
                         var isRegistered = false
 
-                        mFirestore.collection(Constants.USERS)
+                        mFirestoreInstance.collection(Constants.USERS)
                             .whereEqualTo(Constants.ID, auth.currentUser?.uid)
                             .get()
                             .addOnSuccessListener { document ->
@@ -215,7 +215,7 @@ class FirebaseFunctionsClass {
                                             auth.currentUser!!.email!!
                                         )
 
-                                        mFirestore.collection(Constants.USERS)
+                                        mFirestoreInstance.collection(Constants.USERS)
                                             //Getting document id, here it is same as id
                                             .document(userInfo.id)
                                             //If we want to merge the data instead of replacing the complete thing
@@ -233,7 +233,7 @@ class FirebaseFunctionsClass {
                                             }
                                     } else if (isRegistered) {
                                         var user: Task<DocumentSnapshot> =
-                                            mFirestore.collection(
+                                            mFirestoreInstance.collection(
                                                 Constants.USERS
                                             ).document(getCurrentUserID()).get()
                                         user.addOnSuccessListener { document ->
@@ -259,7 +259,7 @@ class FirebaseFunctionsClass {
 
     fun uploadProductDetails(activity: AddProductActivity, productInfo: Product) {
         //If collection is not present, it will create it
-        mFirestore.collection(Constants.PRODUCTS)
+        mFirestoreInstance.collection(Constants.PRODUCTS)
             //Getting document id, here it is same as id
             .document()
             //If we want to merge the data instead of replacing the complete thing
@@ -279,7 +279,7 @@ class FirebaseFunctionsClass {
     }
 
     fun getProductsList(fragment: Fragment) {
-        mFirestore.collection(Constants.PRODUCTS)
+        mFirestoreInstance.collection(Constants.PRODUCTS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -301,7 +301,7 @@ class FirebaseFunctionsClass {
     }
 
     fun getDashboardItemsList(fragment: BuyFragment) {
-        mFirestore.collection((Constants.PRODUCTS))
+        mFirestoreInstance.collection((Constants.PRODUCTS))
             .get()
             .addOnSuccessListener { document ->
                 Log.e(fragment.javaClass.simpleName, document.documents.toString())
@@ -324,7 +324,7 @@ class FirebaseFunctionsClass {
     }
 
     fun deleteProduct(fragment: SellFragment, productId: String): Boolean {
-        mFirestore.collection(Constants.PRODUCTS).document(productId).get()
+        mFirestoreInstance.collection(Constants.PRODUCTS).document(productId).get()
             .addOnSuccessListener { document ->
                 var item = document.toObject(Product::class.java)
 
@@ -338,7 +338,7 @@ class FirebaseFunctionsClass {
 
     fun deleteProductEntry(fragment: SellFragment, productId: String) {
 
-        mFirestore.collection(Constants.PRODUCTS)
+        mFirestoreInstance.collection(Constants.PRODUCTS)
             .document(productId)
             .delete()
             .addOnSuccessListener { fragment.productDeleteSuccess() }
@@ -353,7 +353,7 @@ class FirebaseFunctionsClass {
     }
 
     fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
-        mFirestore.collection(Constants.PRODUCTS)
+        mFirestoreInstance.collection(Constants.PRODUCTS)
             .document(productId)
             .get()
             .addOnSuccessListener { document ->
@@ -371,7 +371,7 @@ class FirebaseFunctionsClass {
     }
 
     fun addCartItems(activity: ProductDetailsActivity, cartItem: CartItem) {
-        mFirestore.collection(Constants.CART_ITEMS)
+        mFirestoreInstance.collection(Constants.CART_ITEMS)
             .document()
             .set(cartItem, SetOptions.merge())
             .addOnSuccessListener {
@@ -388,7 +388,7 @@ class FirebaseFunctionsClass {
     }
 
     fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String) {
-        mFirestore.collection(Constants.CART_ITEMS)
+        mFirestoreInstance.collection(Constants.CART_ITEMS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .whereEqualTo(Constants.PRODUCT_ID, productId)
             .get()
@@ -413,7 +413,7 @@ class FirebaseFunctionsClass {
     }
 
     fun getCartList(activity: Activity) {
-        mFirestore.collection(Constants.CART_ITEMS)
+        mFirestoreInstance.collection(Constants.CART_ITEMS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -432,7 +432,7 @@ class FirebaseFunctionsClass {
                         activity.successCartItemList(list)
                     }
 
-                    is PlaceOrderActivity->{
+                    is PlaceOrderActivity -> {
                         activity.successCartItemsList(list)
                     }
                 }
@@ -452,7 +452,7 @@ class FirebaseFunctionsClass {
     }
 
     fun getAllProductsList(activity: Activity) {
-        mFirestore.collection(Constants.PRODUCTS)
+        mFirestoreInstance.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
                 Log.e("Products List", document.documents.toString())
@@ -485,61 +485,118 @@ class FirebaseFunctionsClass {
             }
     }
 
-    fun removeItemFromCart(context: Context,cart_id:String){
-        mFirestore.collection(Constants.CART_ITEMS)
+    fun removeItemFromCart(context: Context, cart_id: String) {
+        mFirestoreInstance.collection(Constants.CART_ITEMS)
             .document(cart_id)
             .delete()
             .addOnSuccessListener {
-                when(context){
+                when (context) {
                     is CartListActivity -> {
                         context.itemRemovedSuccess()
                     }
                 }
             }
-            .addOnFailureListener {e->
-                when(context){
+            .addOnFailureListener { e ->
+                when (context) {
                     is CartListActivity -> {
                         context.hideProgressDialog()
                     }
                 }
-                Log.e(context.javaClass.simpleName,"Error while removing the item from cart",e)
+                Log.e(context.javaClass.simpleName, "Error while removing the item from cart", e)
             }
     }
 
-    fun updateMyCart(context: Context,card_id:String,itemHashMap: HashMap<String,Any>){
-        mFirestore.collection(Constants.CART_ITEMS)
+    fun updateMyCart(context: Context, card_id: String, itemHashMap: HashMap<String, Any>) {
+        mFirestoreInstance.collection(Constants.CART_ITEMS)
             .document(card_id)
             .update(itemHashMap)
             .addOnSuccessListener {
-                when(context){
+                when (context) {
                     is CartListActivity -> {
                         context.updateItemSuccess()
                     }
                 }
             }
-            .addOnFailureListener { e->
-                when(context){
+            .addOnFailureListener { e ->
+                when (context) {
                     is CartListActivity -> {
                         context.hideProgressDialog()
                     }
                 }
 
-                Log.e(context.javaClass.simpleName,"Error while updating the cart item",e)
+                Log.e(context.javaClass.simpleName, "Error while updating the cart item", e)
             }
     }
 
-    fun placeOrder(activity: PlaceOrderActivity, order: Order){
-        mFirestore.collection(Constants.ORDERS)
+    fun placeOrder(activity: PlaceOrderActivity, order: Order) {
+        mFirestoreInstance.collection(Constants.ORDERS)
             .document()
             .set(order, SetOptions.merge())
             .addOnSuccessListener {
                 activity.orderSuccess()
             }
-            .addOnFailureListener { e->
+            .addOnFailureListener { e ->
 
                 activity.hideProgressDialog()
 
-                Log.e(activity.javaClass.simpleName,"Error while placing order",e)
+                Log.e(activity.javaClass.simpleName, "Error while placing order", e)
+            }
+
+    }
+
+    fun updateDetails(activity: PlaceOrderActivity, cartList: ArrayList<CartItem>) {
+        val writeBatch = mFirestoreInstance.batch()
+        for (item in cartList) {
+            val productHashMap = HashMap<String, Any>()
+
+            productHashMap[Constants.STOCK_QUANTITY] =
+                (item.stock_quantity.toInt() - item.cart_quantity.toInt()).toString()
+
+            val documentReference = mFirestoreInstance.collection(Constants.PRODUCTS)
+                .document(item.product_id)
+
+            writeBatch.update(documentReference, productHashMap)
+        }
+
+        for (item in cartList) {
+            val documentReference = mFirestoreInstance.collection(Constants.CART_ITEMS)
+                .document(item.id)
+
+            writeBatch.delete(documentReference)
+        }
+
+        writeBatch.commit()
+            .addOnSuccessListener {
+                activity.detailsUpdatedSuccessfully()
+            }
+            .addOnFailureListener { e->
+                activity.hideProgressDialog()
+
+                Log.e(activity.javaClass.simpleName, "Error while updating details", e)
+            }
+
+    }
+
+    fun getOrdersList(fragment: OrdersFragment){
+        mFirestoreInstance.collection(Constants.ORDERS)
+            .whereEqualTo(Constants.USER_ID,getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document->
+                val orderList: ArrayList<Order> = ArrayList()
+
+                for(i in document.documents){
+                    val item = i.toObject(Order::class.java)!!
+                    item.id = i.id
+
+                    orderList.add(item)
+                }
+                fragment.successGetOrderUI(orderList)
+            }
+            .addOnFailureListener { e->
+
+                fragment.hideProgressDialog()
+
+                Log.e(fragment.javaClass.simpleName, "Error while getting order details", e)
             }
     }
 }

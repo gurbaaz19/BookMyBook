@@ -11,7 +11,6 @@ import com.projectfire.bookmybook.models.CartItem
 import com.projectfire.bookmybook.models.Order
 import com.projectfire.bookmybook.models.Product
 import com.projectfire.bookmybook.models.User
-import com.projectfire.bookmybook.ui.adapters.CartItemsListAdapter
 import com.projectfire.bookmybook.ui.adapters.CartItemsPlaceOrderListAdapter
 import kotlinx.android.synthetic.main.activity_place_order.*
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -118,15 +117,15 @@ class PlaceOrderActivity : BaseActivity() {
 
         if (mSubTotal > 0) {
             tv_no_cart_item_found.visibility = View.GONE
-            rv_cart_list_items.visibility=View.VISIBLE
+            rv_cart_list_items.visibility = View.VISIBLE
             ll_checkout_place_order.visibility = View.VISIBLE
             mTotal = mSubTotal + 50.0
             var temp2 = (mTotal * 100).toInt()
             mTotal = (temp2.toDouble()) / 100.0
             tv_checkout_total_amount.text = "₹$mTotal"
         } else {
-        tv_no_cart_item_found.visibility = View.VISIBLE
-            rv_cart_list_items.visibility=View.GONE
+            tv_no_cart_item_found.visibility = View.VISIBLE
+            rv_cart_list_items.visibility = View.GONE
             ll_checkout_place_order.visibility = View.GONE
         }
 
@@ -151,6 +150,10 @@ class PlaceOrderActivity : BaseActivity() {
     }
 
     fun orderSuccess() {
+        FirebaseFunctionsClass().updateDetails(this, mCartList)
+    }
+
+    fun detailsUpdatedSuccessfully() {
         hideProgressDialog()
         showSnackBar("Your order was successfully placed", false)
 

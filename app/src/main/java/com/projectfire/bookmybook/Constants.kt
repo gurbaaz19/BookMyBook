@@ -53,6 +53,7 @@ object Constants {
     const val PRODUCT_ID: String = "product_id"
 
     const val CART_QUANTITY: String ="cart_quantity"
+    const val STOCK_QUANTITY: String = "stock_quantity"
 
     fun showImageChooser(activity: Activity) {
         // intent to launch image selection from phone

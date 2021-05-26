@@ -140,4 +140,6 @@
     <string name="err_msg_enter_address">Please enter your Address.</string>
     <string name="err_msg_enter_pin">Please enter your PIN Code.</string>
     <string name="title_place_order">PLACE ORDER</string>
+
+    <string name="no_orders_placed_yet">No orders placed !!!</string>
 </resources>
