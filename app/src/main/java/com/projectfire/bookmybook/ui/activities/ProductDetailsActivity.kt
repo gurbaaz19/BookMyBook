@@ -18,6 +18,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
     private var mProductID: String = ""
     private lateinit var mProductDetails: Product
+    private var mProductOwnerID = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +30,11 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
             mProductID = intent.getStringExtra(Constants.EXTRA_PRODUCT_ID)!!
         }
 
-        var productOwnerID = ""
-
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_OWNER_ID)) {
-            productOwnerID = intent.getStringExtra(Constants.EXTRA_PRODUCT_OWNER_ID)!!
+            mProductOwnerID = intent.getStringExtra(Constants.EXTRA_PRODUCT_OWNER_ID)!!
         }
 
-        if (FirebaseFunctionsClass().getCurrentUserID() == productOwnerID) {
+        if (FirebaseFunctionsClass().getCurrentUserID() == mProductOwnerID) {
             btn_add_to_cart.visibility = View.GONE
             btn_go_to_cart.visibility = View.GONE
         } else {
@@ -115,6 +114,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
     private fun addToCart() {
         val cartItem = CartItem(
             FirebaseFunctionsClass().getCurrentUserID(),
+            mProductOwnerID,
             mProductID,
             mProductDetails.title,
             mProductDetails.publisher,

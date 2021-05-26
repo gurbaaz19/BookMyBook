@@ -39,7 +39,7 @@ open class OrdersListAdapter(
             )
 
             holder.itemView.tv_dashboard_item_title.text = model.title
-            holder.itemView.tv_dashboard_item_price.text = "$${model.total_amount}"
+            holder.itemView.tv_dashboard_item_price.text = "₹${model.total_amount}"
 
             holder.itemView.setOnClickListener {
                 val intent = Intent(context, OrderDetailsActivity::class.java)

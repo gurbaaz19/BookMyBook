@@ -23,6 +23,7 @@ class PlaceOrderActivity : BaseActivity() {
 
     private lateinit var mProductsList: ArrayList<Product>
     private lateinit var mCartList: ArrayList<CartItem>
+    private lateinit var mOrder: Order
     private lateinit var mUser: User
     private var mSubTotal = 0.0
     private var mTotal = 0.0
@@ -145,7 +146,7 @@ class PlaceOrderActivity : BaseActivity() {
         val orderDate = formatter.format(calendarInstance.time)
 
         val userId = FirebaseFunctionsClass().getCurrentUserID()
-        val order = Order(
+        mOrder = Order(
             userId,
             "${mUser.firstName} ${mUser.lastName}",
             mCartList,
@@ -161,11 +162,11 @@ class PlaceOrderActivity : BaseActivity() {
             "${mUser.firstName}/${System.currentTimeMillis()}"
         )
 
-        FirebaseFunctionsClass().placeOrder(this@PlaceOrderActivity, order)
+        FirebaseFunctionsClass().placeOrder(this@PlaceOrderActivity, mOrder)
     }
 
     fun orderSuccess() {
-        FirebaseFunctionsClass().updateDetails(this, mCartList)
+        FirebaseFunctionsClass().updateDetails(this, mCartList, mOrder)
     }
 
     fun detailsUpdatedSuccessfully() {

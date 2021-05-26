@@ -17,10 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
-import com.projectfire.bookmybook.models.CartItem
-import com.projectfire.bookmybook.models.Order
-import com.projectfire.bookmybook.models.Product
-import com.projectfire.bookmybook.models.User
+import com.projectfire.bookmybook.models.*
 import com.projectfire.bookmybook.ui.activities.*
 import com.projectfire.bookmybook.ui.fragments.BuyFragment
 import com.projectfire.bookmybook.ui.fragments.OrdersFragment
@@ -544,18 +541,32 @@ class FirebaseFunctionsClass {
 
     }
 
-    fun updateDetails(activity: PlaceOrderActivity, cartList: ArrayList<CartItem>) {
+    fun updateDetails(activity: PlaceOrderActivity, cartList: ArrayList<CartItem>, order: Order) {
         val writeBatch = mFirestoreInstance.batch()
         for (item in cartList) {
-            val productHashMap = HashMap<String, Any>()
 
-            productHashMap[Constants.STOCK_QUANTITY] =
-                (item.stock_quantity.toInt() - item.cart_quantity.toInt()).toString()
+            val sold = Sold(
+                item.product_owner_id,
+                item.title,
+                item.price,
+                item.cart_quantity,
+                item.image,
+                order.title,
+                order.date,
+                order.sub_total_amount,
+                order.service_charge,
+                order.total_amount,
+                order.address,
+                order.pin,
+                order.user_name,
+                order.mobile,
+/**/
+            )
 
-            val documentReference = mFirestoreInstance.collection(Constants.PRODUCTS)
+            val documentReference = mFirestoreInstance.collection(Constants.SOLD)
                 .document(item.product_id)
 
-            writeBatch.update(documentReference, productHashMap)
+            writeBatch.set(documentReference, sold)
         }
 
         for (item in cartList) {
@@ -569,7 +580,7 @@ class FirebaseFunctionsClass {
             .addOnSuccessListener {
                 activity.detailsUpdatedSuccessfully()
             }
-            .addOnFailureListener { e->
+            .addOnFailureListener { e ->
                 activity.hideProgressDialog()
 
                 Log.e(activity.javaClass.simpleName, "Error while updating details", e)
@@ -577,14 +588,14 @@ class FirebaseFunctionsClass {
 
     }
 
-    fun getOrdersList(fragment: OrdersFragment){
+    fun getOrdersList(fragment: OrdersFragment) {
         mFirestoreInstance.collection(Constants.ORDERS)
-            .whereEqualTo(Constants.USER_ID,getCurrentUserID())
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
-            .addOnSuccessListener { document->
+            .addOnSuccessListener { document ->
                 val orderList: ArrayList<Order> = ArrayList()
 
-                for(i in document.documents){
+                for (i in document.documents) {
                     val item = i.toObject(Order::class.java)!!
                     item.id = i.id
 
@@ -592,7 +603,7 @@ class FirebaseFunctionsClass {
                 }
                 fragment.successGetOrderUI(orderList)
             }
-            .addOnFailureListener { e->
+            .addOnFailureListener { e ->
 
                 fragment.hideProgressDialog()
 

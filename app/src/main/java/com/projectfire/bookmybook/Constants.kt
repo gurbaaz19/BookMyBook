@@ -1,4 +1,5 @@
 package com.projectfire.bookmybook
+
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -12,6 +13,7 @@ object Constants {
     const val PRODUCTS: String = "products"
     const val ORDERS: String = "orders"
     const val CART_ITEMS: String = "cart_items"
+    const val SOLD: String = "sold"
     //
 
     const val RC_GOOGLE_SIGN_IN = 4926
@@ -22,7 +24,7 @@ object Constants {
     const val READ_STORAGE_PERMISSION_CODE = 2
     const val PICK_IMAGE_REQUEST_CODE = 1
 
-    const val ID: String= "id"
+    const val ID: String = "id"
     const val FIRST_NAME: String = "firstName"
     const val LAST_NAME: String = "lastName"
     const val MOBILE: String = "mobile"
@@ -40,9 +42,9 @@ object Constants {
 
     const val PRODUCT_IMAGE: String = "Product_Image"
 
-    const val GOOD: String= "good"
-    const val AVERAGE: String= "average"
-    const val BAD: String= "bad"
+    const val GOOD: String = "good"
+    const val AVERAGE: String = "average"
+    const val BAD: String = "bad"
 
     const val EXTRA_PRODUCT_ID: String = "extra_product_id"
 
@@ -52,7 +54,7 @@ object Constants {
 
     const val PRODUCT_ID: String = "product_id"
 
-    const val CART_QUANTITY: String ="cart_quantity"
+    const val CART_QUANTITY: String = "cart_quantity"
     const val STOCK_QUANTITY: String = "stock_quantity"
 
     const val EXTRA_ORDER_DETAILS: String = "EXTRA_ORDER_DETAILS"
