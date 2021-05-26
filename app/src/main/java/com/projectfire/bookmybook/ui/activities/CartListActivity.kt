@@ -120,14 +120,13 @@ class CartListActivity : BaseActivity() {
     }
 
     fun successProductsListFromFireStore(productsList: ArrayList<Product>) {
-        hideProgressDialog()
+        //hideProgressDialog()
         mProductsList = productsList
 
         getCartItemsList()
     }
 
     fun itemRemovedSuccess() {
-        hideProgressDialog()
         Toast.makeText(
             this@CartListActivity,
             resources.getString(R.string.msg_item_removed_successfully), Toast.LENGTH_SHORT
@@ -137,7 +136,7 @@ class CartListActivity : BaseActivity() {
     }
 
     fun updateItemSuccess() {
-        hideProgressDialog()
+       // hideProgressDialog()
         getCartItemsList()
     }
 }

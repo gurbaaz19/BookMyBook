@@ -10,12 +10,13 @@ import com.projectfire.bookmybook.Constants
 import com.projectfire.bookmybook.GlideLoader
 import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Order
+import com.projectfire.bookmybook.models.Sold
 import com.projectfire.bookmybook.ui.activities.OrderDetailsActivity
 import kotlinx.android.synthetic.main.item_buy_layout.view.*
 
-open class OrdersListAdapter(
+open class SoldListAdapter(
     private val context: Context,
-    private var list: ArrayList<Order>
+    private var list: ArrayList<Sold>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -40,13 +41,13 @@ open class OrdersListAdapter(
 
             holder.itemView.tv_dashboard_item_title.text = model.title
             holder.itemView.tv_dashboard_item_publisher.visibility=View.GONE
-            holder.itemView.tv_dashboard_item_price.text = "₹${model.total_amount}"
+            holder.itemView.tv_dashboard_item_price.text = "₹${model.price}"
 
-            holder.itemView.setOnClickListener {
-                val intent = Intent(context, OrderDetailsActivity::class.java)
-                intent.putExtra(Constants.EXTRA_ORDER_DETAILS, model)
-                context.startActivity(intent)
-            }
+//            holder.itemView.setOnClickListener {
+//                val intent = Intent(context, OrderDetailsActivity::class.java)
+//                intent.putExtra(Constants.EXTRA_ORDER_DETAILS, model)
+//                context.startActivity(intent)
+//            }
         }
     }
 

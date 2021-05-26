@@ -153,7 +153,7 @@ class PlaceOrderActivity : BaseActivity() {
             mUser.address,
             mUser.pin.toString(),
             mUser.mobile.toString(),
-            "Order of ${mUser.firstName} ${mUser.lastName} (${userId}) at ${orderDate}",
+            "Order of ${mUser.firstName} at ${orderDate}",
             mCartList[0].image,
             mSubTotal.toString(),
             "50.0",

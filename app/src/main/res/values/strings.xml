@@ -56,9 +56,9 @@
 
     <string name="msg_profile_update_success">Your profile was updated successfully.</string>
     <!--    <string name="title_activity_dashboard">MainActivity</string>-->
-    <string name="title_Sell">SELL</string>
-    <string name="title_Buy">BUY</string>
-    <string name="title_Orders">ORDERS</string>
+    <string name="title_Sell">Sell</string>
+    <string name="title_Buy">Buy</string>
+    <string name="title_Orders">Orders</string>
     <string name="title_Share">SHARE</string>
 
     <string name="action_settings">Settings</string>
@@ -149,4 +149,11 @@
     <string name="order_status_pending">PENDING</string>
     <string name="order_status_delivered">DELIVERED</string>
     <string name="title_order_details">ORDER DETAILS</string>
+    <string name="title_sold">SOLD BOOKS</string>
+    <string name="no_book_sold">No Book Sold!!!</string>
+    <string name="title_transaction">TRANSACTIONS</string>
+    <string name="title_Transaction">Transactions</string>
+    <string name="title_buy">BUY</string>
+    <string name="title_sell">SELL</string>
+    <string name="title_Sold">Sold</string>
 </resources>

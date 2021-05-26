@@ -8,20 +8,20 @@
     <fragment
         android:id="@+id/navigation_buy"
         android:name="com.projectfire.bookmybook.ui.fragments.BuyFragment"
-        android:label="@string/title_Buy"
+        android:label="@string/title_buy"
         tools:layout="@layout/fragment_buy" />
 
     <fragment
         android:id="@+id/navigation_sell"
         android:name="com.projectfire.bookmybook.ui.fragments.SellFragment"
-        android:label="@string/title_Sell"
+        android:label="@string/title_sell"
         tools:layout="@layout/fragment_sell" />
 
     <fragment
         android:id="@+id/navigation_orders"
-        android:name="com.projectfire.bookmybook.ui.fragments.OrdersFragment"
-        android:label="@string/title_Orders"
-        tools:layout="@layout/fragment_orders" />
+        android:name="com.projectfire.bookmybook.ui.fragments.TransactionFragment"
+        android:label="@string/title_transaction"
+        tools:layout="@layout/fragment_transaction" />
 
 
 <!--    <fragment-->

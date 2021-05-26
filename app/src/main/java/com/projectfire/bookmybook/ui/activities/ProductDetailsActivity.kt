@@ -153,6 +153,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
                 R.id.btn_go_to_cart -> {
                     intent = Intent(this@ProductDetailsActivity, CartListActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
             }
         }

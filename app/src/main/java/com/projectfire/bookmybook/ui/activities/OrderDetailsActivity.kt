@@ -9,7 +9,7 @@ import com.projectfire.bookmybook.R
 import com.projectfire.bookmybook.models.Order
 import com.projectfire.bookmybook.ui.adapters.CartItemsPlaceOrderListAdapter
 import kotlinx.android.synthetic.main.activity_order_details.*
-import kotlinx.android.synthetic.main.fragment_orders.*
+import kotlinx.android.synthetic.main.fragment_transaction.*
 
 class OrderDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

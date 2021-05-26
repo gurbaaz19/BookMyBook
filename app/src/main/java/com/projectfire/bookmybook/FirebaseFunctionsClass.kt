@@ -20,7 +20,7 @@ import com.google.firebase.storage.ktx.storage
 import com.projectfire.bookmybook.models.*
 import com.projectfire.bookmybook.ui.activities.*
 import com.projectfire.bookmybook.ui.fragments.BuyFragment
-import com.projectfire.bookmybook.ui.fragments.OrdersFragment
+import com.projectfire.bookmybook.ui.fragments.TransactionFragment
 import com.projectfire.bookmybook.ui.fragments.SellFragment
 
 class FirebaseFunctionsClass {
@@ -357,7 +357,7 @@ class FirebaseFunctionsClass {
                 Log.e(activity.javaClass.simpleName, document.toString())
                 val product = document.toObject(Product::class.java)
                 if (product != null) {
-                    activity.productDetailsSuccess(product!!)
+                    activity.productDetailsSuccess(product)
                 }
             }
             .addOnFailureListener { e ->
@@ -588,7 +588,7 @@ class FirebaseFunctionsClass {
 
     }
 
-    fun getOrdersList(fragment: OrdersFragment) {
+    fun getOrdersList(fragment: TransactionFragment) {
         mFirestoreInstance.collection(Constants.ORDERS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
@@ -610,4 +610,28 @@ class FirebaseFunctionsClass {
                 Log.e(fragment.javaClass.simpleName, "Error while getting order details", e)
             }
     }
+
+    fun getSoldList(fragment: TransactionFragment) {
+        mFirestoreInstance.collection(Constants.SOLD)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                val soldList: ArrayList<Sold> = ArrayList()
+
+                for (i in document.documents) {
+                    val item = i.toObject(Sold::class.java)!!
+                    item.id = i.id
+
+                    soldList.add(item)
+                }
+                fragment.successGetSoldUI(soldList)
+            }
+            .addOnFailureListener { e ->
+
+                fragment.hideProgressDialog()
+
+                Log.e(fragment.javaClass.simpleName, "Error while getting sold details", e)
+            }
+    }
+
 }
