@@ -23,6 +23,7 @@
         android:label="@string/title_Orders"
         tools:layout="@layout/fragment_orders" />
 
+
 <!--    <fragment-->
 <!--        android:id="@+id/navigation_share"-->
 <!--        android:name="com.shoppingapplication.ui.fragments.OrdersFragment"-->

@@ -25,6 +25,7 @@
             android:id="@+id/iv_cart_item_image"
             android:layout_width="50dp"
             android:layout_height="75dp"
+            android:layout_margin="3dp"
             android:background="@color/colorImageViewBackground"
             android:contentDescription="@string/content_description"
             android:scaleType="fitXY" />

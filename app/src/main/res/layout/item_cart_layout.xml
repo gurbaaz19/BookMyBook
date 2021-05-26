@@ -25,6 +25,7 @@
             android:id="@+id/iv_cart_item_image"
             android:layout_width="@dimen/item_image_width"
             android:layout_height="@dimen/item_image_height"
+            android:layout_margin="6dp"
             android:background="@color/colorImageViewBackground"
             android:contentDescription="@string/content_description"
             android:scaleType="fitXY" />
