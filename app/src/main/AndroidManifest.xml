@@ -11,9 +11,14 @@
         android:roundIcon="@mipmap/ic_bookmybook_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMyBook">
-        <activity android:name=".ui.activities.OrderDetailsActivity"
+        <activity
+            android:name=".ui.activities.SoldDetailsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.OrderDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.PlaceOrderActivity"
             android:screenOrientation="portrait"

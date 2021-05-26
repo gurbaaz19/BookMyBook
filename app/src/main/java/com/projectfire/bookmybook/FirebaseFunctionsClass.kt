@@ -570,6 +570,19 @@ class FirebaseFunctionsClass {
         }
 
         for (item in cartList) {
+
+            val productHashMap = HashMap<String, Any>()
+
+            productHashMap[Constants.STOCK_QUANTITY] =
+                (item.stock_quantity.toInt() - item.cart_quantity.toInt()).toString()
+
+            val documentReference = mFirestoreInstance.collection(Constants.PRODUCTS)
+                .document(item.product_id)
+
+            writeBatch.update(documentReference, productHashMap)
+        }
+
+        for (item in cartList) {
             val documentReference = mFirestoreInstance.collection(Constants.CART_ITEMS)
                 .document(item.id)
 

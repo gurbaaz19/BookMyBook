@@ -156,4 +156,6 @@
     <string name="title_buy">BUY</string>
     <string name="title_sell">SELL</string>
     <string name="title_Sold">Sold</string>
+    <string name="sold_book_details">SOLD BOOK DETAILS</string>
+    <string name="lbl_book_price">Book Price</string>
 </resources>

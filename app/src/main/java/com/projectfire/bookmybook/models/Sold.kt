@@ -13,7 +13,7 @@ data class Sold(
     val order_id: String = "",
     val order_date: String = "",
     val sub_total_amount: String = "",
-    val shipping_charge: String = "",
+    val service_charge: String = "",
     val total_amount: String = "",
     val address: String ="",
     val pin: String ="",

@@ -57,7 +57,9 @@ object Constants {
     const val CART_QUANTITY: String = "cart_quantity"
     const val STOCK_QUANTITY: String = "stock_quantity"
 
-    const val EXTRA_ORDER_DETAILS: String = "EXTRA_ORDER_DETAILS"
+    const val EXTRA_ORDER_DETAILS: String = "extra_order_details"
+    const val EXTRA_SOLD_DETAILS: String = "extra_sold_details"
+
 
     fun showImageChooser(activity: Activity) {
         // intent to launch image selection from phone

@@ -40,6 +40,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         et_email.isEnabled = false
 
         if (mUserDetails.profileCompleted == 0) {
+            setupActionBar()
             tv_title.text = resources.getString(R.string.title_complete_profile)
             et_first_name.isEnabled = false
             et_last_name.isEnabled = false
