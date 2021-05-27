@@ -22,7 +22,7 @@ via settings.
 
 ## Screenshots
 <p>
-<img align="left" src="README IMAGES/1.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/1.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
    
 
