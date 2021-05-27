@@ -22,28 +22,38 @@ via settings.
 
 ## Screenshots
 <p>
-<img align="left" src="README IMAGES/1l.jpeg" width="400px" hspace="20" vspace="20"/>
-<img align="left" src="README IMAGES/1d.jpeg" width="400px" vspace="20"/>
+<img align="left" src="README IMAGES/1.jpeg" width="400px" hspace="20" vspace="20"/>
 </p>
    
 
 <p>
-<img align="left" src="README IMAGES/2l.jpeg" width="400px" hspace="20" vspace="20"/>
-<img align="left" src="README IMAGES/2d.jpeg" width="400px" vspace="20"/>
+<img align="left" src="README IMAGES/2.jpeg" width="400px" hspace="20" vspace="20"/>
 </p>
   
 <p>
-<img align="left" src="README IMAGES/3l.jpeg" width="400px" hspace="20" vspace="20"/>
-<img align="left" src="README IMAGES/3d.jpeg" width="400px" vspace="20"/>
+<img align="left" src="README IMAGES/3.jpeg" width="400px" hspace="20" vspace="20"/>
 </p>
   
 <p>
-<img align="left" src="README IMAGES/4l.jpeg" width="400px" hspace="20" vspace="20"/>
-<img align="left" src="README IMAGES/4d.jpeg" width="400px" vspace="20"/>
+<img align="left" src="README IMAGES/4.jpeg" width="400px" hspace="20" vspace="20"/>
 </p> 
   
 <p>
-<img align="left" src="README IMAGES/5l.jpeg" width="400px" hspace="20" vspace="20"/>
-<img align="left" src="README IMAGES/5d.jpeg" width="400px" vspace="20"/>
+<img align="left" src="README IMAGES/5.jpeg" width="400px" hspace="20" vspace="20"/>
 </p>
-  
+
+<p>
+<img align="left" src="README IMAGES/6.jpeg" width="400px" hspace="20" vspace="20"/>
+</p>
+ 
+<p>
+<img align="left" src="README IMAGES/7.jpeg" width="400px" hspace="20" vspace="20"/>
+</p>
+
+<p>
+<img align="left" src="README IMAGES/8.jpeg" width="400px" hspace="20" vspace="20"/>
+</p>
+
+<p>
+<img align="left" src="README IMAGES/9.jpeg" width="400px" hspace="20" vspace="20"/>
+</p>
