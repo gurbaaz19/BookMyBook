@@ -177,6 +177,29 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:text="@string/order_quantity"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize" />
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomRegular
+                            android:id="@+id/tv_sold_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="14sp"
+                            tools:text="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/status"
                             android:textColor="@color/item_value_text_color"
                             android:textSize="@dimen/checkout_label_value_textSize"
@@ -215,7 +238,30 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/lbl_book_price"
+                            android:text="@string/lbl_price_per_book"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize" />
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                            android:id="@+id/tv_per_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textColor="@color/item_value_text_color"
+                            android:textSize="@dimen/checkout_label_value_textSize"
+                            tools:text="₹110" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.projectfire.bookmybook.custom_view_items.TextViewCustomBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/lbl_total_amount"
                             android:textColor="@color/item_value_text_color"
                             android:textSize="@dimen/checkout_label_value_textSize" />
 

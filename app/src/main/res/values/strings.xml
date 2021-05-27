@@ -158,4 +158,6 @@
     <string name="title_Sold">Sold</string>
     <string name="sold_book_details">SOLD BOOK DETAILS</string>
     <string name="lbl_book_price">Book Price</string>
+    <string name="order_quantity">Order Quantity</string>
+    <string name="lbl_price_per_book">Price Per Book</string>
 </resources>

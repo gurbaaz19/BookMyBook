@@ -551,7 +551,7 @@ class FirebaseFunctionsClass {
                 item.price,
                 item.cart_quantity,
                 item.image,
-                order.title,
+                order.order_id,
                 order.date,
                 order.sub_total_amount,
                 order.service_charge,
