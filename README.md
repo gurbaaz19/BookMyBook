@@ -27,33 +27,25 @@ via settings.
    
 
 <p>
-<img align="left" src="README IMAGES/2.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/2.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
   
 <p>
-<img align="left" src="README IMAGES/3.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/3.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
   
 <p>
-<img align="left" src="README IMAGES/4.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/4.jpg" width="400px" hspace="20" vspace="20"/>
 </p> 
   
 <p>
-<img align="left" src="README IMAGES/5.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/5.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
 
 <p>
-<img align="left" src="README IMAGES/6.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/6.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
  
 <p>
-<img align="left" src="README IMAGES/7.jpeg" width="400px" hspace="20" vspace="20"/>
-</p>
-
-<p>
-<img align="left" src="README IMAGES/8.jpeg" width="400px" hspace="20" vspace="20"/>
-</p>
-
-<p>
-<img align="left" src="README IMAGES/9.jpeg" width="400px" hspace="20" vspace="20"/>
+<img align="left" src="README IMAGES/7.jpg" width="400px" hspace="20" vspace="20"/>
 </p>
